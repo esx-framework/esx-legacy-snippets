@@ -1,11 +1,11 @@
 {
-    "name": "esx-legacy-snippets",
+    "name": "esx-legacy",
     "displayName": "Official ESX Snippets",
     "description": "Official Snippet Extension for ESX Legacy",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "publisher": "esx-framework",
     "homepage": "https://github.com/esx-framework/esx-legacy-snippets",
-    "icon": "assets/images/logo.jpg",
+    "icon": "assets/images/logo.png",
     "engines": {
         "vscode": "^1.68.0"
     },
@@ -40,6 +40,6 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/xorzo1/esx_legacy_snippets.git"
+        "url": "https://github.com/esx-framework/esx-legacy-snippets.git"
     }
 }
