@@ -1,867 +1,2755 @@
 {
-    "RegisterCommand": {
-        "prefix": "ESX.RegisterCommand",
-        "body": [
-            "ESX.RegisterCommand({'clear', 'cls'}, 'user', function(xPlayer, args, showError)",
-            "    xPlayer.triggerEvent('chat:clear')",
-            "end, false, {help = _U('command_clear')})",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registercommand"
-        ]
-    },
-    "PlayerLoaded": {
-        "prefix": "ESX:playerloaded",
-        "body": [
-            "RegisterNetEvent('esx:playerLoaded')",
-            "AddEventHandler('esx:playerLoaded', function(playerData)",
-                "$0",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/playerloaded"
-        ]
-    },
-    "AdvancedNotification": {
-        "prefix": "ESX:showAdvancedNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showAdvancedNotification', source, title, subject, msg, icon, iconType)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/showadvancednotification"
-        ]
-    },
-    "showHelpNotification": {
-        "prefix": "ESX:showHelpNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showHelpNotification', source, 'Hit ~INPUT_CONTEXT~ to do shit!')",
-            "-- https://docs.esx-framework.org/legacy/Client/events/showhelpnotification"
-        ]
-    },
-    "showNotification": {
-        "prefix": "ESX:showNotification event",
-        "body": [
-            "TriggerClientEvent('esx:showNotification', source, 'Hello world!', type, time)",
-            "-- https://docs.esx-framework.org/legacy/Client/events/shownotification"
-        ]
-    },
-    "GetPlayerData": {
-        "prefix": "ESX.GetPlayerData",
-        "body": [
-            "ESX.GetPlayerData()"
-        ]
-    },
-    "IsPlayerLoaded": {
-        "prefix": "ESX.IsPlayerLoaded",
-        "body": [
-            "ESX.IsPlayerLoaded()"
-        ]
-    },
-    "SetPlayerData": {
-        "prefix": "ESX.SetPlayerData",
-        "body": [
-            "ESX.SetPlayerData(key, val)"
-        ]
-    },
-    "AdvancedNotification2": {
-        "prefix": "ESX:showAdvancedNotification function",
-        "body": [
-            "ESX.ShowAdvancedNotification(sender, subject, msg, textureDict, iconType, flash, saveToBrief, hudColorIndex)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showadvancednotification"
-        ]
-    },
-    "ShowFloatingHelpNotification": {
-        "prefix": "ESX.ShowFloatingHelpNotification",
-        "body": [
-            "local coords = GetEntityCoords(PlayerPedId())",
-            "ESX.ShowFloatingHelpNotification('Your Notification', vector3(coords.x, coords.y, coords.z))",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showfloatinghelpnotification"
-        ]
-    },
-    "ShowHelpNotification2": {
-        "prefix": "ESX:showHelpNotification function",
-        "body": [
-            "ESX.ShowHelpNotification('Hit ~INPUT_CONTEXT~ to do shit!')",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/showhelpnotification"
-        ]
-    },
-    "ShowInventory": {
-        "prefix": "ESX.ShowInventory",
-        "body": [
-            "ESX.ShowInventory()"
-        ]
-    },
-    "ShowNotification2": {
-        "prefix": "ESX.ShowNotification",
-        "body": [
-            "ESX.ShowNotification(msg, time, type)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/shownotification"
-        ]
-    },
-    "TriggerServerCallback": {
-        "prefix": "ESX.TriggerServerCallback",
-        "body": [
-            "local data2 = 'data'",
-            "ESX.TriggerServerCallback('esx:bestframework', function(data)",
-            "   print(data)",
-            "end, data2)",
-            "-- https://docs.esx-framework.org/legacy/Client/functions/triggerservercallback"
-        ]
-    },
-    "DeleteObj": {
-        "prefix": "ESX.Game.DeleteObject",
-        "body": [
-            "ESX.Game.DeleteObject(obj"
-        ]
-    },
-    "DeleteVehicle": {
-        "prefix": "ESX.Game.DeleteVehicle",
-        "body": [
-            "ESX.Game.DeleteVehicle(veh)"
-        ]
-    },
-    "GetClosestEntity": {
-        "prefix": "ESX.Game.GetClosestEntity",
-        "body": [
-            "ESX.Game.GetClosestEntity(pos, filter)"
-        ]
-    },
-    "GetClosestObject": {
-        "prefix": "ESX.Game.GetClosestObject",
-        "body": [
-            "ESX.Game.GetClosestObject(pos, filter)"
-        ]
-    },
-    "GetClosestPed": {
-        "prefix": "ESX.Game.GetClosestPed", 
-        "body": [
-            "ESX.Game.GetClosestPed(pos, filter)"
-        ]
-    },
-    "GetClosestPlayer": {
-        "prefix": "ESX.Game.GetClosestPlayer",
-        "body": [
-            "ESX.Game.GetClosestPlayer(pos)"
-        ]
-    },
-    "GetClosestVehicle": {
-        "prefix": "ESX.Game.GetClosestVehicle",
-        "body": [
-            "ESX.Game.GetClosestVehicle(pos, filter)"
-        ]
-    },
-    "GetObjects": {
-        "prefix": "ESX.Game.GetObjects",
-        "body": [
-            "ESX.Game.GetObjects"
-        ]
-    },
-    "GetPedMugShot": {
-        "prefix": "ESX.Game.GetPedMugShot",
-        "body": [
-            "local shot, shotStr = ESX.Game.GetPedMugShot(ped)"
-        ]
-    },
-    "GetPeds": {
-        "prefix": "ESX.Game.GetPeds",
-        "body": [
-            "ESX.Game.GetPeds(peds)"
-        ]
-    },
-    "GetPlayers": {
-        "prefix": "ESX.Game.GetPlayers",
-        "body": [
-            "ESX.Game.GetPlayers(players, value, peds)"
-        ]
-    },
-    "GetPlayersInArea": {
-        "prefix": "ESX.Game.GetPlayersInArea",
-        "body": [
-            "ESX.Game.GetPlayersInArea(pos, dist)"
-        ]
-    },
-    "GetVehicleDirection": {
-        "prefix": "ESX.Game.GetVehicleDirection",
-        "body": [
-            "ESX.Game.GetVehicleDirection()"
-        ]
-    },
-    "GetVehicleProperties": {
-        "prefix": "ESX.Game.GetVehicleProperties",
-        "body": [
-            "ESX.Game.GetVehicleProperties(veh)"
-        ]
-    },
-    "GetVehicles": {
-        "prefix": "ESX.Game.GetVehicles",
-        "body": [
-            "ESX.Game.GetVehicles()"
-        ]
-    },
-    "GetVehiclesInArea": {
-        "prefix": "ESX.Game.GetVehiclesInArea",
-        "body": [
-            "ESX.Game.GetVehiclesInArea(pos, dist)"
-        ]
-    },
-    "IsSpawnPointClear": {
-        "prefix": "ESX.Game.IsSpawnPointClear",
-        "body": [
-            "ESX.Game.IsSpawnPointClear(pos, dist)"
-        ]
-    },
-    "IsVehicleEmpty": {
-        "prefix": "ESX.Game.IsVehicleEmpty",
-        "body": [
-            "ESX.Game.IsVehicleEmpty(veh)"
-        ]
-    },
-    "SetVehicleProperties": {
-        "prefix": "ESX.Game.SetVehicleProperties",
-        "body": [
-            "ESX.Game.SetVehicleProperties(veh, props) -- information in documentation: https://docs.esx-framework.org/legacy/Client/functions/game/setvehicleproperties"
-        ]
-    },
-    "SpawnLocalObject": {
-        "prefix": "ESX.Game.SpawnLocalObject",
-        "body": [
-            "ESX.Game.SpawnLocalObject(model/hash, pos, cb)"
-        ]
-    },
-    "SpawnLocalVehicle": {
-        "prefix": "ESX.Game.SpawnLocalVehicle",
-        "body": [
-            "ESX.Game.SpawnLocalVehicle(model/hash, pos, heading, cb)"
-        ]
-    },
-    "SpawnObject": {
-        "prefix": "ESX.Game.SpawnObject",
-        "body": [
-            "ESX.Game.SpawnObject(model/hash, pos, cb)"
-        ]
-    },
-    "SpawnVehicle": {
-        "prefix": "ESX.Game.SpawnVehicle",
-        "body": [
-            "ESX.Game.SpawnVehicle(model/hash, pos, heading, cb)"
-        ]
-    },
-    "teleport": {
-        "prefix": "ESX.Game.Teleport",
-        "body": [
-            "ESX.Game.Teleport(entity, pos, cb)"
-        ]
-    },
-    "DrawText3d": {
-        "prefix": "ESX.Game.Utils.DrawText3D",
-        "body": [
-            "ESX.Game.Utils.DrawText3D(pos, text, size, font)"
-        ]
-    },
-    "ShowBreakingNews": {
-        "prefix": "ESX.Scaleform.ShowBreakingNews",
-        "body": [
-            "ESX.Scaleform.ShowBreakingNews(title, msg, bottom, sec)"
-        ]
-    },
-    "ShowFreemodeMessage": {
-        "prefix": "ESX.Scaleform.ShowFreemodeMessage",
-        "body": [
-            "ESX.Scaleform.ShowFreemodeMessage(title, msg, sec)"
-        ]
-    },
-    "ShowPopupWarning": {
-        "prefix": "ESX.Scaleform.ShowPopupWarning",
-        "body": [
-            "ESX.Scaleform.ShowPopupWarning(title, msg, bottom, sec)"
-        ]
-    },
-    "ShowTrafficMovie": {
-        "prefix": "ESX.Scaleform.ShowTrafficMovie",
-        "body": [
-            "ESX.Scaleform.ShowTrafficMovie(sec)"
-        ]
-    },
-    "RequestScaleformMovie": {
-        "prefix": "ESX.Scaleform.RequestScaleformMovie",
-        "body": [
-            "ESX.Scaleform.RequestScaleformMovie(movie)"
-        ]
-    },
-    "RequestAnimDict": {
-        "prefix": "ESX.Streaming.RequestAnimDict",
-        "body": [
-            "ESX.Streaming.RequestAnimDict(dict, cb)"
-        ]
-    },
-    "RequestAnimSet": {
-        "prefix": "ESX.Steaming.RequestAnimSet",
-        "body": [
-            "ESX.Steaming.RequestAnimSet(set, cb)"
-        ]
-    },
-    "RequestModel": {
-        "prefix": "ESX.Streaming.RequestModel",
-        "body": [
-            "ESX.Streaming.RequestModel(model, cb)"
-        ]
-    },
-    "RequestNamedPtfxAsset": {
-        "prefix": "ESX.Streaming.RequestNamedPtfxAsset",
-        "body": [
-            "ESX.Streaming.RequestNamedPtfx(asset, cb)"
-        ]
-    },
-    "RequestStreamedTextureDict": {
-        "prefix": "ESX.Streaming.RequestStreamedTextureDict",
-        "body": [
-            "ESX.Streaming.RequestStreamedTextureDict(texture, cb)"
-        ]
-    },
-    "RequestWeaponAsset": {
-        "prefix": "ESX.Streaming.RequestWeaponAsset",
-        "body": [
-            "ESX.Streaming.RequestWeaponAsset(hash, cb)"
-        ]
-    },
-    "ShowInventoryItemNotification": {
-        "prefix": "ESX.UI.ShowInventoryItemNotification",
-        "body": [
-            "ESX.UI.ShowInventoryItemNotification(add, item, count)"
-        ]
-    },
-    "RegisterElement": {
-        "prefix": "ESX.UI.HUD.RegisterElement",
-        "body": [
-            "ESX.UI.HUD.RegisterElement(name, index, prio, html, data)"
-        ]
-    },
-    "RemoveElement": {
-        "prefix": "ESX.UI.HUD.RemoveElement",
-        "body": [
-            "ESX.UI.HUD.RemoveElement(name)"
-        ]
-    },
-    "SetDisplay": {
-        "prefix": "ESX.UI.HUD.SetDisplay",
-        "body": [
-            "ESX.UI.HUD.SetDisplay(opacity)"
-        ]
-    },
-    "UpdateElement": {
-        "prefix": "ESX.UI.HUD.UpdateElement",
-        "body": [
-            "ESX.UI.HUD.UpdateElement(name, data)"
-        ]
-    },
-    "Close": {
-        "prefix": "ESX.UI.Menu.Close",
-        "body": [
-            "ESX.UI.Menu.Close(type, namespace, name)"
-        ]
-    },
-    "Closeall": {
-        "prefix": "ESX.UI.Menu.Closeall",
-        "body": [
-            "ESX.UI.Menu.CloseAll()"
-        ]
-    },
-    "GetOpened": {
-        "prefix": "ESX.UI.Menu.GetOpened",
-        "body": [
-            "ESX.UI.Menu.GetOpened(type, namespace, name)"
-        ]
-    },
-    "IsOpen": {
-        "prefix": "ESX.UI.Menu.IsOpen",
-        "body": [
-            "ESX.UI.Menu.IsOpen(type, namespace, name)"
-        ]
-    },
-    "Open": {
-        "prefix": "ESX.UI.Menu.Open",
-        "body": [
-            "ESX.UI.Menu.Open(type, namespace, name, data, submit, cancel, change, close)"
-        ]
-    },
-    "RegisterType": {
-        "prefix": "ESX.UI.Menu.RegisterType",
-        "body": [
-            "ESX.UI.RegisterType(type, open, close)"
-        ]
-    },
-    "onPlayerDeath": {
-        "prefix": "ESX:onPlayerDeath",
-        "body": [
-            "AddEventHandler('esx:onPlayerDeath', function(data)",
-            "   print('oops.. Player is death')",
-            "end)"
-        ]
-    },
-    "DumpTable": {
-        "prefix": "ESX.DumpTable",
-        "body": [
-            "ESX.DumpTable(table)"
-        ]
-    },
-    "GetConfig": {
-        "prefix": "ESX.GetConfig",
-        "body": [
-            "ESX.GetConfig()"
-        ]
-    },
-    "GetRandomString": {
-        "prefix": "ESX.GetRandomString",
-        "body": [
-            "ESX.GetRandomString(length)"
-        ]
-    },
-    "GetWeapon": {
-        "prefix": "ESX.GetWeapon",
-        "body": [
-            "ESX.GetWeapon(weaponName)"
-        ]
-    },
-    "GetWeaponComponent": {
-        "prefix": "ESX.GetWeaponComponent",
-        "body": [
-            "ESX.GetWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "GetWeaponLabel": {
-        "prefix": "ESX.GetWeaponLabel",
-        "body": [
-            "ESX.GetWeaponLabel(weaponName)"
-        ]
-    },
-    "GetWeaponList": {
-        "prefix": "ESX.GetWeaponList",
-        "body": [
-            "ESX.GetWeaponList"
-        ]
-    },
-    "Math.GroupDigits": {
-        "prefix": "ESX.Math.GroupDigits",
-        "body": [
-            "ESX.Math.GroupDigits(val)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/groupdigits"
-        ]
-    },
-    "Math.round": {
-        "prefix": "ESX.Math.Round",
-        "body": [
-            "ESX.Math.Round(val, numDecimals)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/round"
-        ]
-    },
-    "Math.Trim": {
-        "prefix": "ESX.Math.Trim",
-        "body": [
-            "ESX.Math.Trim(val)",
-            "-- https://docs.esx-framework.org/legacy/Common/functions/trim"
-        ]
-    },
-    "ClearTimeout": {
-        "prefix": "ESX.ClearTimeout",
-        "body": [
-            "ESX.ClearTimeout(id)"
-        ]
-    },
-    "CreatePickup": {
-        "prefix": "ESX.CreatePickup",
-        "body": [
-            "ESX.CreatePickup(type, name, count, label, playerId, components, tintIndex)"
-        ]
-    },
-    "DoesJobExist": {
-        "prefix": "ESX.DoesJobExist",
-        "body": [
-            "ESX.DoesJobExist(job, grade)"
-        ]
-    },
-    "GetExtendedPlayers": {
-        "prefix": "ESX.GetExtendedPlayers",
-        "body": [
-            "ESX.GetExtendedPlayers(key, val)"
-        ]
-    },
-    "GetItemLabel": {
-        "prefix": "ESX.GetItemLabel",
-        "body": [
-            "ESX.GetItemLabel(item)"
-        ]
-    },
-    "GetJobs": {
-        "prefix": "ESX.GetJobs",
-        "body": [
-            "ESX.GetJobs()"
-        ]
-    },
-    "GetPlayerFromId": {
-        "prefix": "ESX.GetPlayerFromId",
-        "body": [
-            "ESX.GetPlayerFromId(PlayerId)"
-        ]
-    },
-    "GetPlayerFromIdentifier": {
-        "prefix": "ESX.GetPlayerFromIdentifier",
-        "body": [
-            "ESX.GetPlayerFromIdentifier(identifier)"
-        ]
-    },
-    "GetPlayers sv": {
-        "prefix": "ESX.GetPlayers",
-        "body": [
-            "ESX.GetPlayers()"
-        ]
-    },
-    "RegisterServerCallback": {
-        "prefix": "ESX.RegisterServerCallback",
-        "body": [
-            "local server = 'my server'",
-            "ESX.RegisterServerCallback('esx:bestframework', function(src, cb, param1, param2)",
-            "   cb(server)",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registerservercallback"
-        ]
-    },
-    "RegisterUsableItem": {
-        "prefix": "ESX.RegisterUsableItem",
-        "body": [
-            "ESX.RegisterUsableItem('bread', function(playerId)",
-            "   local xPlayer = ESX.GetPlayerFromId(playerId)",
-            "   xPlayer.removeInventoryItem('bread', 1)",
-            "   xPlayer.showNotification('That was delicious.. right?')",
-            "end)",
-            "-- https://docs.esx-framework.org/legacy/Server/functions/registerusableitem"
-        ]
-    },
-    "SetTimeout": {
-        "prefix": "ESX.SetTimeout",
-        "body": [
-            "local Timeout = ESX.SetTimeout(5000, function()",
-            "   print('xD')",
-            "end)"
-        ]
-    },
-    "Trace": {
-        "prefix": "ESX.Trace",
-        "body": [
-            "ESX.Trace(msg)"
-        ]
-    },
-    "UseItem": {
-        "prefix": "ESX.UseItem",
-        "body": [
-            "ESX.UseItem(PlayerId, itemName)"
-        ]
-    },
-    "addAccountMoney": {
-        "prefix": "xPlayer.addAccountMoney",
-        "body": [
-            "xPlayer.addAccountMoney(account, money)"
-        ]
-    },
-    "addInventoryItem": {
-        "prefix": "xPlayer.addInventoryItem",
-        "body": [
-            "xPlayer.addInventoryItem(item, count)"
-        ]
-    },
-    "addMoney": {
-        "prefix": "xPlayer.addMoney",
-        "body": [
-            "xPlayer.addMoney(money)"
-        ]
-    },
-    "addWeapon": {
-        "prefix": "xPlayer.addWeapon",
-        "body": [
-            "xPlayer.addWeapon(weaponName, ammo)"
-        ]
-    },
-    "addWeaponAmmo": {
-        "prefix": "xPlayer.addWeaponAmmo",
-        "body": [
-            "xPlayer.addWeaponAmmo(weaponName, ammoCount)"
-        ]
-    },
-    "addWeaponComponent": {
-        "prefix": "xPlayer.addWeaponComponent",
-        "body": [
-            "xPlayer.addWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "canCarryItem": {
-        "prefix": "xPlayer.canCarryItem",
-        "body": [
-            "xPlayer.canCarryItem(item, count)"
-        ]
-    },
-    "canSwapItem": {
-        "prefix": "xPlayer.canSwapItem",
-        "body": [
-            "xPlayer.canSwapItem(firstItem, firstItemCount, testItem, testItemCount)"
-        ]
-    },
-    "getAccount": {
-        "prefix": "xPlayer.getAccount",
-        "body": [
-            "xPlayer.getAccount(account)"
-        ]
-    },
-    "getAccounts": {
-        "prefix": "xPlayer.getAccounts",
-        "body": [
-            "xPlayer.getAccounts()"
-        ]
-    },
-    "getCoords": {
-        "prefix": "xPlayer.getCoords",
-        "body": [
-            "xPlayer.getCoords(useVec)"
-        ]
-    },
-    "getGroup": {
-        "prefix": "xPlayer.getGroup",
-        "body": [
-            "xPlayer.getGroup()"
-        ]
-    },
-    "getIdentifier": {
-        "prefix": "xPlayer.getIdentifier",
-        "body": [
-            "xPlayer.getIdentifier()"
-        ]
-    },
-    "getInventory": {
-        "prefix": "xPlayer.getInventory",
-        "body": [
-            "xPlayer.getInventory(minimal)"
-        ]
-    },
-    "getInventoryItem": {
-        "prefix": "xPlayer.getInventoryItem",
-        "body": [
-            "xPlayer.getInventoryItem(item)"
-        ]
-    },
-    "getJob": {
-        "prefix": "xPlayer.getJob",
-        "body": [
-            "xPlayer.getJob()"
-        ]
-    },
-    "getLoadout": {
-        "prefix": "xPlayer.getLoadout",
-        "body": [
-            "xPlayer.getLoadout()"
-        ]
-    },
-    "getMissingAccounts": {
-        "prefix": "xPlayer.getMissingAccounts",
-        "body": [
-            "xPlayer.getMissingAccounts(cb)"
-        ]
-    },
-    "getMoney": {
-        "prefix": "xPlayer.getMoney",
-        "body": [
-            "xPlayer.getMoney()"
-        ]
-    },
-    "getName": {
-        "prefix": "xPlayer.getName",
-        "body": [
-            "xPlayer.getName()"
-        ]
-    },
-    "getWeapon": {
-        "prefix": "xPlayer.getWeapon",
-        "body": [
-            "xPlayer.getWeapon(weaponName)"
-        ]
-    },
-    "getWeaponTint": {
-        "prefix": "xPlayer.getWeaponTint",
-        "body": [
-            "xPlayer.getWeaponTint(weaponName, weaponTintIndex)"
-        ]
-    },
-    "getWeight": {
-        "prefix": "xPlayer.getWeight",
-        "body": [
-            "xPlayer.getWeight()"
-        ]
-    },
-    "hasItem": {
-        "prefix": "xPlayer.hasItem",
-        "body": [
-            "xPlayer.hasItem(item, metadata)"
-        ]
-    },
-    "hasWeapon": {
-        "prefix": "xPlayer.hasWeapon",
-        "body": [
-            "xPlayer.hasWeapon(weaponName)"
-        ]
-    },
-    "hasWeaponComponent": {
-        "prefix": "xPlayer.hasWeaponComponent",
-        "body": [
-            "xPlayer.hasWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "kick": {
-        "prefix": "xPlayer.kick",
-        "body": [
-            "xPlayer.kick(reason)"
-        ]
-    },
-    "removeAccountMoney": {
-        "prefix": "xPlayer.removeAccountMoney",
-        "body": [
-            "xPlayer.removeAccountMoney(account, money)"
-        ]
-    },
-    "removeInventoryItem": {
-        "prefix": "xPlayer.removeInventoryItem",
-        "body": [
-            "xPlayer.removeInventoryItem(item, count)"
-        ]
-    },
-    "removeMoney": {
-        "prefix": "xPlayer.removeMoney",
-        "body": [
-            "xPlayer.removeMoney(money)"
-        ]
-    },
-    "removeWeapon": {
-        "prefix": "xPlayer.removeWeapon",
-        "body": [
-            "xPlayer.removeWeapon(weaponName)"
-        ]
-    },
-    "removeWeaponAmmo": {
-        "prefix": "xPlayer.removeWeaponAmmo",
-        "body": [
-            "xPlayer.removeWeaponAmmo(weaponName, ammoCount)"
-        ]
-    },
-    "removeWeaponComponent": {
-        "prefix": "xPlayer.removeWeaponComponent",
-        "body": [
-            "xPlayer.removeWeaponComponent(weaponName, weaponComponent)"
-        ]
-    },
-    "setAccountMoney": {
-        "prefix": "xPlayer.setAccountMoney",
-        "body": [
-            "xPlayer.setAccountMoney(account, money)"
-        ]
-    },
-    "setCoords": {
-        "prefix": "xPlayer.setCoords",
-        "body": [
-            "xPlayer.setCoords(coords)"
-        ]
-    },
-    "setInventoryItem": {
-        "prefix": "xPlayer.setInventoryItem",
-        "body": [
-            "xPlayer.setInventoryItem(item, count)"
-        ]
-    },
-    "setJob": {
-        "prefix": "xPlayer.setJob",
-        "body": [
-            "xPlayer.setJob(name, grade)"
-        ]
-    },
-    "setMaxWeight": {
-        "prefix": "xPlayer.setMaxWeight",
-        "body": [
-            "xPlayer.setMaxWeight(newWeight)"
-        ]
-    },
-    "setMoney": {
-        "prefix": "xPlayer.setMoney",
-        "body": [
-            "xPlayer.setMoney(money)"
-        ]
-    },
-    "setName": {
-        "prefix": "xPlayer.setName",
-        "body": [
-            "xPlayer.setName(newName)"
-        ]
-    },
-    "setWeaponTint": {
-        "prefix": "xPlayer.setWeaponTint",
-        "body": [
-            "xPlayer.setWeaponTint(weaponName, weaponTintIndex)"
-        ]
-    },
-    "showHelpNotification xPlayer": {
-        "prefix": "xPlayer.showHelpNotification",
-        "body": [
-            "xPlayer.showHelpNotification(msg, thisFrame, beep, duration)",
-            "-- https://docs.esx-framework.org/legacy/Server/xplayer/showhelpnotification"
-        ]
-    },
-    "showNotification xPlayer": {
-        "prefix": "xPlayer.showNotification",
-        "body": [
-            "xPlayer.showNotification(msg, flash, saveToBrief, hudColorIndex)",
-            "-- https://docs.esx-framework.org/legacy/Server/xplayer/shownotification"
-        ]
-    },
-    "triggerEvent xPlayer": {
-        "prefix": "xPlayer.triggerEvent",
-        "body": [
-            "xPlayer.triggerEvent(eventName, ...)"
-        ]
-    },
-    "updateCoords": {
-        "prefix": "xPlayer.updateCoords",
-        "body": [
-            "xPlayer.updateCoords(coords)"
-        ]
-    },   
-    "PlayerData": {
-        "prefix": "ESX.PlayerData",
-        "body": [
-            "ESX.PlayerData"
-        ]
-    },
-    "PlayerDataJobName": {
-        "prefix": "ESX.PlayerData.job.name",
-        "body": [
-            "ESX.PlayerData.job.name"
-        ]
-    },
-       "PlayerDataJobGrade": {
-        "prefix": "ESX.PlayerData.job.grade_name",
-        "body": [
-            "ESX.PlayerData.job.grade_name"
-        ]
-    },
-    "ContextMenuOpen": {
-        "prefix": "ESX.OpenContext()",
-        "body": [
-            "ESX.OpenContext()"
-        ]
-    },
-    "ESX.RegisterInput": {
-        "prefix": "ESX.RegisterInput",
-        "body": [
-            "ESX.RegisterInput"
-        ]
-    },
-    "ContextMenuClose": {
-        "prefix": "ESX.CloseContext()",
-        "body": [
-            "ESX.CloseContext()"
-        ]
-    },
-    "sharedObject": {
-        "prefix": "ESX.SharedObject",
-        "body": [
-            "ESX = exports['es_extended']:getSharedObject()"
-        ]
-    }
+  "RegisterCommand": {
+    "prefix": "ESX.RegisterCommand (ESX)",
+    "body": [
+      "ESX.RegisterCommand({'clear', 'cls'}, 'user', function(xPlayer, args, showError)",
+      "    xPlayer.triggerEvent('chat:clear')",
+      "end, false, {",
+      "    help = 'Clear the chat'",
+      "})",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#registercommand",
+    ],
+  },
+  "PlayerLoaded": {
+    "prefix": "ESX:playerloaded (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:playerLoaded', function(xPlayer, skin)",
+      "    -- xPlayer contains the loaded character data; skin is the player's skin.",
+      "    $0",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client#esxplayerloaded",
+    ],
+  },
+  "AdvancedNotification": {
+    "prefix": "ESX:showAdvancedNotification event (ESX)",
+    "body": [
+      "TriggerClientEvent('esx:showAdvancedNotification', target, sender, subject, msg, textureDict, iconType, flash, saveToBrief, hudColorIndex)",
+      "-- Prefer xPlayer.triggerEvent(...) when you already have the xPlayer object.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#shownotification",
+    ],
+  },
+  "showHelpNotification": {
+    "prefix": "ESX:showHelpNotification event (ESX)",
+    "body": [
+      "TriggerClientEvent('esx:showHelpNotification', target, msg, thisFrame, beep, duration)",
+      "-- Event payload/behavior depends on the ESX client notification handler.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "showNotification": {
+    "prefix": "ESX:showNotification event (ESX)",
+    "body": [
+      "TriggerClientEvent('esx:showNotification', target, msg, type, length)",
+      "-- For current ESX notification resources, see esx_notify.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#shownotification",
+    ],
+  },
+  "GetPlayerData": {
+    "prefix": "ESX.GetPlayerData (ESX)",
+    "body": ["ESX.GetPlayerData()"],
+  },
+  "IsPlayerLoaded": {
+    "prefix": "ESX.IsPlayerLoaded (ESX)",
+    "body": ["ESX.IsPlayerLoaded()"],
+  },
+  "SetPlayerData": {
+    "prefix": "ESX.SetPlayerData (ESX)",
+    "body": ["ESX.SetPlayerData(key, val)"],
+  },
+  "AdvancedNotification2": {
+    "prefix": "ESX:showAdvancedNotification function (ESX)",
+    "body": [
+      "ESX.ShowAdvancedNotification(sender, subject, msg, textureDict, iconType, flash, saveToBrief, hudColorIndex)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#showadvancednotification",
+    ],
+  },
+  "ShowFloatingHelpNotification": {
+    "prefix": "ESX.ShowFloatingHelpNotification (ESX)",
+    "body": [
+      "local coords = GetEntityCoords(PlayerPedId())",
+      "ESX.ShowFloatingHelpNotification('Your message', coords)",
+      "-- Call every frame while the help text should be visible (Wait(0)).",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#showfloatinghelpnotification",
+    ],
+  },
+  "ShowHelpNotification2": {
+    "prefix": "ESX:showHelpNotification function (ESX)",
+    "body": [
+      "ESX.ShowHelpNotification('Press ~INPUT_CONTEXT~ to interact', false, true, 3500)",
+      "-- For per-frame display, call repeatedly with thisFrame=true.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#showhelpnotification",
+    ],
+  },
+  "ShowInventory": {
+    "prefix": "ESX.ShowInventory (ESX)",
+    "body": ["ESX.ShowInventory()"],
+  },
+  "ShowNotification2": {
+    "prefix": "ESX.ShowNotification (ESX)",
+    "body": [
+      "ESX.ShowNotification(msg, type, length)",
+      "-- ESX notification resource; check your esx_notify version for supported options.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#shownotification",
+    ],
+  },
+  "TriggerServerCallback": {
+    "prefix": "ESX.TriggerServerCallback (ESX)",
+    "body": [
+      "ESX.TriggerServerCallback('my_resource:getData', function(data)",
+      "    print(data)",
+      "end, arg1, arg2)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/callback",
+    ],
+  },
+  "DeleteObj": {
+    "prefix": "ESX.Game.DeleteObject (ESX)",
+    "body": ["ESX.Game.DeleteObject(object)"],
+    "description": "Delete an object. See current ESX.Game docs.",
+  },
+  "DeleteVehicle": {
+    "prefix": "ESX.Game.DeleteVehicle (ESX)",
+    "body": ["ESX.Game.DeleteVehicle(veh)"],
+  },
+  "GetClosestEntity": {
+    "prefix": "ESX.Game.GetClosestEntity (ESX)",
+    "body": [
+      "local entity, distance = ESX.Game.GetClosestEntity(coords, filter)",
+    ],
+  },
+  "GetClosestObject": {
+    "prefix": "ESX.Game.GetClosestObject (ESX)",
+    "body": [
+      "local object, distance = ESX.Game.GetClosestObject(coords, filter)",
+    ],
+  },
+  "GetClosestPed": {
+    "prefix": "ESX.Game.GetClosestPed (ESX)",
+    "body": ["local ped, distance = ESX.Game.GetClosestPed(coords, filter)"],
+  },
+  "GetClosestPlayer": {
+    "prefix": "ESX.Game.GetClosestPlayer (ESX)",
+    "body": ["local player, distance = ESX.Game.GetClosestPlayer(coords)"],
+  },
+  "GetClosestVehicle": {
+    "prefix": "ESX.Game.GetClosestVehicle (ESX)",
+    "body": [
+      "local vehicle, distance = ESX.Game.GetClosestVehicle(coords, filter)",
+    ],
+  },
+  "GetObjects": {
+    "prefix": "ESX.Game.GetObjects (ESX)",
+    "body": ["local objects = ESX.Game.GetObjects()"],
+    "description": "Get all objects.",
+  },
+  "GetPedMugShot": {
+    "prefix": "ESX.Game.GetPedMugshot (ESX)",
+    "body": [
+      "local mugshot, txd = ESX.Game.GetPedMugshot(PlayerPedId(), true)",
+    ],
+  },
+  "GetPeds": {
+    "prefix": "ESX.Game.GetPeds (ESX)",
+    "body": ["local peds = ESX.Game.GetPeds()"],
+    "description": "Get all peds.",
+  },
+  "GetPlayers": {
+    "prefix": "ESX.Game.GetPlayers (ESX)",
+    "body": ["local players = ESX.Game.GetPlayers()"],
+    "description": "Get nearby/client players as documented.",
+  },
+  "GetPlayersInArea": {
+    "prefix": "ESX.Game.GetPlayersInArea (ESX)",
+    "body": ["local players = ESX.Game.GetPlayersInArea(coords, radius)"],
+  },
+  "GetVehicleDirection": {
+    "prefix": "ESX.Game.GetVehicleInDirection (ESX)",
+    "body": ["local vehicle = ESX.Game.GetVehicleInDirection()"],
+    "description": "Get the vehicle in the direction the player is facing.",
+  },
+  "GetVehicleProperties": {
+    "prefix": "ESX.Game.GetVehicleProperties (ESX)",
+    "body": ["local properties = ESX.Game.GetVehicleProperties(vehicle)"],
+  },
+  "GetVehicles": {
+    "prefix": "ESX.Game.GetVehicles (ESX)",
+    "body": ["local vehicles = ESX.Game.GetVehicles()"],
+  },
+  "GetVehiclesInArea": {
+    "prefix": "ESX.Game.GetVehiclesInArea (ESX)",
+    "body": ["local vehicles = ESX.Game.GetVehiclesInArea(coords, radius)"],
+  },
+  "IsSpawnPointClear": {
+    "prefix": "ESX.Game.IsSpawnPointClear (ESX)",
+    "body": ["local isClear = ESX.Game.IsSpawnPointClear(coords, radius)"],
+  },
+  "IsVehicleEmpty": {
+    "prefix": "ESX.Game.IsVehicleEmpty (ESX)",
+    "body": ["local isEmpty = ESX.Game.IsVehicleEmpty(vehicle)"],
+  },
+  "SetVehicleProperties": {
+    "prefix": "ESX.Game.SetVehicleProperties (ESX)",
+    "body": ["ESX.Game.SetVehicleProperties(vehicle, properties)"],
+  },
+  "SpawnLocalObject": {
+    "prefix": "ESX.Game.SpawnLocalObject (ESX)",
+    "body": [
+      "ESX.Game.SpawnLocalObject(model, coords, function(object)",
+      "$0",
+      "end)",
+    ],
+  },
+  "SpawnLocalVehicle": {
+    "prefix": "ESX.Game.SpawnLocalVehicle (ESX)",
+    "body": [
+      "ESX.Game.SpawnLocalVehicle(model, coords, heading, function(vehicle)",
+      "$0",
+      "end)",
+    ],
+  },
+  "SpawnObject": {
+    "prefix": "ESX.Game.SpawnObject (ESX)",
+    "body": [
+      "ESX.Game.SpawnObject(model, coords, function(object)",
+      "$0",
+      "end)",
+    ],
+  },
+  "SpawnVehicle": {
+    "prefix": "ESX.Game.SpawnVehicle (ESX)",
+    "body": [
+      "ESX.Game.SpawnVehicle(model, coords, heading, function(vehicle)",
+      "$0",
+      "end)",
+    ],
+  },
+  "teleport": {
+    "prefix": "ESX.Game.Teleport (ESX)",
+    "body": ["ESX.Game.Teleport(entity, coords, function()", "$0", "end)"],
+  },
+  "DrawText3d": {
+    "prefix": "ESX.Game.Utils.DrawText3D (ESX)",
+    "body": ["ESX.Game.Utils.DrawText3D(coords, text, size, font)"],
+  },
+  "ShowBreakingNews": {
+    "prefix": "ESX.Scaleform.ShowBreakingNews (ESX)",
+    "body": ["ESX.Scaleform.ShowBreakingNews(title, msg, bottom, sec)"],
+  },
+  "ShowFreemodeMessage": {
+    "prefix": "ESX.Scaleform.ShowFreemodeMessage (ESX)",
+    "body": ["ESX.Scaleform.ShowFreemodeMessage(title, msg, sec)"],
+  },
+  "ShowPopupWarning": {
+    "prefix": "ESX.Scaleform.ShowPopupWarning (ESX)",
+    "body": ["ESX.Scaleform.ShowPopupWarning(title, msg, bottom, sec)"],
+  },
+  "ShowTrafficMovie": {
+    "prefix": "ESX.Scaleform.ShowTrafficMovie (ESX)",
+    "body": ["ESX.Scaleform.ShowTrafficMovie(sec)"],
+  },
+  "RequestScaleformMovie": {
+    "prefix": "ESX.Scaleform.RequestScaleformMovie (ESX)",
+    "body": ["ESX.Scaleform.RequestScaleformMovie(movie)"],
+  },
+  "RequestAnimDict": {
+    "prefix": "ESX.Streaming.RequestAnimDict (ESX)",
+    "body": [
+      "ESX.Streaming.RequestAnimDict(dict, function()",
+      "    -- Animation dictionary is loaded.",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/streaming",
+    ],
+  },
+  "RequestAnimSet": {
+    "prefix": "ESX.Streaming.RequestAnimSet (ESX)",
+    "body": ["ESX.Streaming.RequestAnimSet(animSet, function()", "$0", "end)"],
+    "description": "Request an animation set.",
+  },
+  "RequestModel": {
+    "prefix": "ESX.Streaming.RequestModel (ESX)",
+    "body": [
+      "ESX.Streaming.RequestModel(model, function()",
+      "    -- Model is loaded.",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/streaming",
+    ],
+  },
+  "RequestNamedPtfxAsset": {
+    "prefix": "ESX.Streaming.RequestNamedPtfxAsset (ESX)",
+    "body": [
+      "ESX.Streaming.RequestNamedPtfxAsset(assetName, function()",
+      "$0",
+      "end)",
+    ],
+    "description": "Request a named particle FX asset.",
+  },
+  "RequestStreamedTextureDict": {
+    "prefix": "ESX.Streaming.RequestStreamedTextureDict (ESX)",
+    "body": [
+      "ESX.Streaming.RequestStreamedTextureDict(textureDict, function()",
+      "    -- Texture dictionary is loaded.",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/streaming",
+    ],
+  },
+  "RequestWeaponAsset": {
+    "prefix": "ESX.Streaming.RequestWeaponAsset (ESX)",
+    "body": [
+      "ESX.Streaming.RequestWeaponAsset(weaponHash, function()",
+      "    -- Weapon asset is loaded.",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/streaming",
+    ],
+  },
+  "ShowInventoryItemNotification": {
+    "prefix": "ESX.UI.ShowInventoryItemNotification (ESX)",
+    "body": [
+      "ESX.UI.ShowInventoryItemNotification(add, itemName, count)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/ui",
+    ],
+  },
+  "RegisterElement": {
+    "prefix": "ESX.UI.HUD.RegisterElement (ESX)",
+    "body": ["ESX.UI.HUD.RegisterElement(name, index, prio, html, data)"],
+  },
+  "RemoveElement": {
+    "prefix": "ESX.UI.HUD.RemoveElement (ESX)",
+    "body": ["ESX.UI.HUD.RemoveElement(name)"],
+  },
+  "SetDisplay": {
+    "prefix": "ESX.UI.HUD.SetDisplay (ESX)",
+    "body": ["ESX.UI.HUD.SetDisplay(opacity)"],
+  },
+  "UpdateElement": {
+    "prefix": "ESX.UI.HUD.UpdateElement (ESX)",
+    "body": ["ESX.UI.HUD.UpdateElement(name, data)"],
+  },
+  "Close": {
+    "prefix": "ESX.UI.Menu.Close (ESX)",
+    "body": ["ESX.UI.Menu.Close(type, namespace, name)"],
+  },
+  "Closeall": {
+    "prefix": "ESX.UI.Menu.Closeall (ESX)",
+    "body": ["ESX.UI.Menu.CloseAll()"],
+    "description": "Close all open ESX menus.",
+  },
+  "GetOpened": {
+    "prefix": "ESX.UI.Menu.GetOpened (ESX)",
+    "body": ["local menu = ESX.UI.Menu.GetOpened(menuType, namespace, name)"],
+    "description": "Get an opened menu.",
+  },
+  "IsOpen": {
+    "prefix": "ESX.UI.Menu.IsOpen (ESX)",
+    "body": ["ESX.UI.Menu.IsOpen(type, namespace, name)"],
+  },
+  "Open": {
+    "prefix": "ESX.UI.Menu.Open (ESX)",
+    "body": [
+      "ESX.UI.Menu.Open(type, namespace, name, data, submit, cancel, change, close)",
+    ],
+  },
+  "RegisterType": {
+    "prefix": "ESX.UI.Menu.RegisterType (ESX)",
+    "body": ["ESX.UI.Menu.RegisterType(menuType, openFunction, closeFunction)"],
+    "description": "Register a custom menu type.",
+  },
+  "onPlayerDeath": {
+    "prefix": "ESX:onPlayerDeath (ESX)",
+    "body": [
+      "AddEventHandler('esx:onPlayerDeath', function(data)",
+      "   print('oops.. Player is death')",
+      "end)",
+    ],
+  },
+  "DumpTable": {
+    "prefix": "ESX.DumpTable (ESX)",
+    "body": ["ESX.DumpTable(table)"],
+  },
+  "GetConfig": {
+    "prefix": "ESX.GetConfig (ESX)",
+    "body": [
+      "local config = ESX.GetConfig()",
+      "local debugEnabled = ESX.GetConfig('EnableDebug')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared#getconfig",
+    ],
+  },
+  "GetRandomString": {
+    "prefix": "ESX.GetRandomString (ESX)",
+    "body": ["ESX.GetRandomString(length)"],
+  },
+  "GetWeapon": {
+    "prefix": "ESX.GetWeapon (ESX)",
+    "body": [
+      "local weaponIndex, weapon = ESX.GetWeapon(weaponName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "GetWeaponComponent": {
+    "prefix": "ESX.GetWeaponComponent (ESX)",
+    "body": [
+      "local component = ESX.GetWeaponComponent(weaponName, componentName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "GetWeaponLabel": {
+    "prefix": "ESX.GetWeaponLabel (ESX)",
+    "body": [
+      "local label = ESX.GetWeaponLabel(weaponName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "GetWeaponList": {
+    "prefix": "ESX.GetWeaponList (ESX)",
+    "body": ["local weapons = ESX.GetWeaponList()"],
+    "description": "Get the weapon list.",
+  },
+  "Math.GroupDigits": {
+    "prefix": "ESX.Math.GroupDigits (ESX)",
+    "body": [
+      "ESX.Math.GroupDigits(val)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/Common/functions/groupdigits",
+    ],
+  },
+  "Math.round": {
+    "prefix": "ESX.Math.Round (ESX)",
+    "body": [
+      "ESX.Math.Round(val, numDecimals)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/Common/functions/round",
+    ],
+  },
+  "Math.Trim": {
+    "prefix": "ESX.Math.Trim (ESX)",
+    "body": [
+      "ESX.Math.Trim(val)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/Common/functions/trim",
+    ],
+  },
+  "ClearTimeout": {
+    "prefix": "ESX.ClearTimeout (ESX)",
+    "body": [
+      "ESX.ClearTimeout(timeoutId)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared/timeout",
+    ],
+  },
+  "CreatePickup": {
+    "prefix": "ESX.CreatePickup (ESX)",
+    "body": [
+      "ESX.CreatePickup(pickupType, itemName, count, label, playerId, components, tintIndex)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#createpickup",
+    ],
+  },
+  "DoesJobExist": {
+    "prefix": "ESX.DoesJobExist (ESX)",
+    "body": [
+      "local exists = ESX.DoesJobExist(jobName, grade)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#doesjobexist",
+    ],
+  },
+  "GetExtendedPlayers": {
+    "prefix": "ESX.GetExtendedPlayers (ESX)",
+    "body": [
+      "local police = ESX.GetExtendedPlayers('job', 'police')",
+      "-- Legacy-compatible; current docs recommend ESX.ExtendedPlayers for player iteration.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#getextendedplayers",
+    ],
+  },
+  "GetItemLabel": {
+    "prefix": "ESX.GetItemLabel (ESX)",
+    "body": [
+      "local label = ESX.GetItemLabel(itemName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#getitemlabel",
+    ],
+  },
+  "GetJobs": {
+    "prefix": "ESX.GetJobs (ESX)",
+    "body": [
+      "local jobs = ESX.GetJobs()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#getjobs",
+    ],
+  },
+  "GetPlayerFromId": {
+    "prefix": "ESX.GetPlayerFromId (ESX)",
+    "body": [
+      "local xPlayer = ESX.GetPlayerFromId(playerId)",
+      "if xPlayer then",
+      "    print(xPlayer.getName())",
+      "end",
+      "-- Current docs identify ESX.Player as the preferred lightweight player wrapper.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#getplayerfromid",
+    ],
+  },
+  "GetPlayerFromIdentifier": {
+    "prefix": "ESX.GetPlayerFromIdentifier (ESX)",
+    "body": [
+      "local xPlayer = ESX.GetPlayerFromIdentifier(identifier)",
+      "if xPlayer then",
+      "    print(xPlayer.getName())",
+      "end",
+      "-- Current docs identify ESX.Player as the preferred lightweight player wrapper.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#getplayerfromidentifier",
+    ],
+  },
+  "GetPlayers sv": {
+    "prefix": "ESX.GetPlayers (ESX)",
+    "body": ["local players = ESX.GetPlayers()"],
+    "description": "Get all connected player server IDs.",
+  },
+  "RegisterServerCallback": {
+    "prefix": "ESX.RegisterServerCallback (ESX)",
+    "body": [
+      "ESX.RegisterServerCallback('my_resource:getData', function(source, cb, arg1, arg2)",
+      "    local result = { value = 'server data' }",
+      "    cb(result)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#registerservercallback",
+    ],
+  },
+  "RegisterUsableItem": {
+    "prefix": "ESX.RegisterUsableItem (ESX)",
+    "body": [
+      "ESX.RegisterUsableItem('bread', function(source, item)",
+      "    local xPlayer = ESX.GetPlayerFromId(source)",
+      "    if not xPlayer then return end",
+      "    xPlayer.removeInventoryItem('bread', 1)",
+      "    xPlayer.showNotification('That was delicious!')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#registerusableitem",
+    ],
+  },
+  "SetTimeout": {
+    "prefix": "ESX.SetTimeout (ESX)",
+    "body": [
+      "local timeoutId = ESX.SetTimeout(5000, function()",
+      "    print('Timeout finished')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared/timeout",
+    ],
+  },
+  "Trace": {
+    "prefix": "ESX.Trace (ESX)",
+    "body": [
+      "ESX.Trace(('Debug message: %s'):format(value))",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#print-a-trace",
+    ],
+  },
+  "UseItem": {
+    "prefix": "ESX.UseItem (ESX)",
+    "body": [
+      "ESX.UseItem(source, itemName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions#useitem",
+    ],
+  },
+  "addAccountMoney": {
+    "prefix": "xPlayer.addAccountMoney (ESX)",
+    "body": ["xPlayer.addAccountMoney(account, money)"],
+  },
+  "addInventoryItem": {
+    "prefix": "xPlayer.addInventoryItem (ESX)",
+    "body": ["xPlayer.addInventoryItem(item, count)"],
+  },
+  "addMoney": {
+    "prefix": "xPlayer.addMoney (ESX)",
+    "body": ["xPlayer.addMoney(money)"],
+  },
+  "addWeapon": {
+    "prefix": "xPlayer.addWeapon (ESX)",
+    "body": ["xPlayer.addWeapon(weaponName, ammo)"],
+  },
+  "addWeaponAmmo": {
+    "prefix": "xPlayer.addWeaponAmmo (ESX)",
+    "body": ["xPlayer.addWeaponAmmo(weaponName, ammoCount)"],
+  },
+  "addWeaponComponent": {
+    "prefix": "xPlayer.addWeaponComponent (ESX)",
+    "body": ["xPlayer.addWeaponComponent(weaponName, weaponComponent)"],
+  },
+  "canCarryItem": {
+    "prefix": "xPlayer.canCarryItem (ESX)",
+    "body": ["xPlayer.canCarryItem(item, count)"],
+  },
+  "canSwapItem": {
+    "prefix": "xPlayer.canSwapItem (ESX)",
+    "body": [
+      "xPlayer.canSwapItem(firstItem, firstItemCount, testItem, testItemCount)",
+    ],
+  },
+  "getAccount": {
+    "prefix": "xPlayer.getAccount (ESX)",
+    "body": ["xPlayer.getAccount(account)"],
+  },
+  "getAccounts": {
+    "prefix": "xPlayer.getAccounts (ESX)",
+    "body": ["xPlayer.getAccounts()"],
+  },
+  "getCoords": {
+    "prefix": "xPlayer.getCoords (ESX)",
+    "body": [
+      "local coords = xPlayer.getCoords(true) -- true returns vector3",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#getcoords",
+    ],
+  },
+  "getGroup": {
+    "prefix": "xPlayer.getGroup (ESX)",
+    "body": ["xPlayer.getGroup()"],
+  },
+  "getIdentifier": {
+    "prefix": "xPlayer.getIdentifier (ESX)",
+    "body": ["xPlayer.getIdentifier()"],
+  },
+  "getInventory": {
+    "prefix": "xPlayer.getInventory (ESX)",
+    "body": ["xPlayer.getInventory(minimal)"],
+  },
+  "getInventoryItem": {
+    "prefix": "xPlayer.getInventoryItem (ESX)",
+    "body": ["xPlayer.getInventoryItem(item)"],
+  },
+  "getJob": {
+    "prefix": "xPlayer.getJob (ESX)",
+    "body": ["xPlayer.getJob()"],
+  },
+  "getLoadout": {
+    "prefix": "xPlayer.getLoadout (ESX)",
+    "body": ["xPlayer.getLoadout()"],
+  },
+  "getMissingAccounts": {
+    "prefix": "xPlayer.getMissingAccounts (ESX)",
+    "body": ["xPlayer.getMissingAccounts(cb)"],
+  },
+  "getMoney": {
+    "prefix": "xPlayer.getMoney (ESX)",
+    "body": ["xPlayer.getMoney()"],
+  },
+  "getName": {
+    "prefix": "xPlayer.getName (ESX)",
+    "body": ["xPlayer.getName()"],
+  },
+  "getWeapon": {
+    "prefix": "xPlayer.getWeapon (ESX)",
+    "body": ["xPlayer.getWeapon(weaponName)"],
+  },
+  "getWeaponTint": {
+    "prefix": "xPlayer.getWeaponTint (ESX)",
+    "body": ["xPlayer.getWeaponTint(weaponName, weaponTintIndex)"],
+  },
+  "getWeight": {
+    "prefix": "xPlayer.getWeight (ESX)",
+    "body": ["xPlayer.getWeight()"],
+  },
+  "hasItem": {
+    "prefix": "xPlayer.hasItem (ESX)",
+    "body": ["xPlayer.hasItem(item, metadata)"],
+  },
+  "hasWeapon": {
+    "prefix": "xPlayer.hasWeapon (ESX)",
+    "body": ["xPlayer.hasWeapon(weaponName)"],
+  },
+  "hasWeaponComponent": {
+    "prefix": "xPlayer.hasWeaponComponent (ESX)",
+    "body": ["xPlayer.hasWeaponComponent(weaponName, weaponComponent)"],
+  },
+  "kick": {
+    "prefix": "xPlayer.kick (ESX)",
+    "body": [
+      "DropPlayer(source, reason)",
+      "-- xPlayer.kick(reason) is retained for backwards compatibility only.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#kick",
+    ],
+  },
+  "removeAccountMoney": {
+    "prefix": "xPlayer.removeAccountMoney (ESX)",
+    "body": ["xPlayer.removeAccountMoney(account, money)"],
+  },
+  "removeInventoryItem": {
+    "prefix": "xPlayer.removeInventoryItem (ESX)",
+    "body": ["xPlayer.removeInventoryItem(item, count)"],
+  },
+  "removeMoney": {
+    "prefix": "xPlayer.removeMoney (ESX)",
+    "body": ["xPlayer.removeMoney(money)"],
+  },
+  "removeWeapon": {
+    "prefix": "xPlayer.removeWeapon (ESX)",
+    "body": ["xPlayer.removeWeapon(weaponName)"],
+  },
+  "removeWeaponAmmo": {
+    "prefix": "xPlayer.removeWeaponAmmo (ESX)",
+    "body": ["xPlayer.removeWeaponAmmo(weaponName, ammoCount)"],
+  },
+  "removeWeaponComponent": {
+    "prefix": "xPlayer.removeWeaponComponent (ESX)",
+    "body": ["xPlayer.removeWeaponComponent(weaponName, weaponComponent)"],
+  },
+  "setAccountMoney": {
+    "prefix": "xPlayer.setAccountMoney (ESX)",
+    "body": ["xPlayer.setAccountMoney(account, money)"],
+  },
+  "setCoords": {
+    "prefix": "xPlayer.setCoords (ESX)",
+    "body": ["xPlayer.setCoords(coords)"],
+  },
+  "setInventoryItem": {
+    "prefix": "xPlayer.setInventoryItem (ESX)",
+    "body": ["xPlayer.setInventoryItem(item, count)"],
+  },
+  "setJob": {
+    "prefix": "xPlayer.setJob (ESX)",
+    "body": [
+      "xPlayer.setJob(jobName, grade, onDuty)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#setjob",
+    ],
+  },
+  "setMaxWeight": {
+    "prefix": "xPlayer.setMaxWeight (ESX)",
+    "body": ["xPlayer.setMaxWeight(newWeight)"],
+  },
+  "setMoney": {
+    "prefix": "xPlayer.setMoney (ESX)",
+    "body": ["xPlayer.setMoney(money)"],
+  },
+  "setName": {
+    "prefix": "xPlayer.setName (ESX)",
+    "body": ["xPlayer.setName(newName)"],
+  },
+  "setWeaponTint": {
+    "prefix": "xPlayer.setWeaponTint (ESX)",
+    "body": ["xPlayer.setWeaponTint(weaponName, weaponTintIndex)"],
+  },
+  "showHelpNotification xPlayer": {
+    "prefix": "xPlayer.showHelpNotification (ESX)",
+    "body": [
+      "xPlayer.showHelpNotification(msg, thisFrame, beep, duration)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#showhelpnotification",
+    ],
+  },
+  "showNotification xPlayer": {
+    "prefix": "xPlayer.showNotification (ESX)",
+    "body": [
+      "xPlayer.showNotification(msg, type, length)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#shownotification",
+    ],
+  },
+  "triggerEvent xPlayer": {
+    "prefix": "xPlayer.triggerEvent (ESX)",
+    "body": [
+      "xPlayer.triggerEvent(eventName, ...)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer#triggerevent",
+    ],
+  },
+  "updateCoords": {
+    "prefix": "xPlayer.updateCoords (ESX)",
+    "body": ["xPlayer.updateCoords(coords)"],
+  },
+  "PlayerData": {
+    "prefix": "ESX.PlayerData (ESX)",
+    "body": [
+      "local playerData = ESX.PlayerData",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/playerdata",
+    ],
+  },
+  "PlayerDataJobName": {
+    "prefix": "ESX.PlayerData.job.name (ESX)",
+    "body": [
+      "local jobName = ESX.PlayerData.job and ESX.PlayerData.job.name",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/playerdata",
+    ],
+  },
+  "PlayerDataJobGrade": {
+    "prefix": "ESX.PlayerData.job.grade_name (ESX)",
+    "body": [
+      "local jobGradeName = ESX.PlayerData.job and ESX.PlayerData.job.grade_name",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/playerdata",
+    ],
+  },
+  "ContextMenuOpen": {
+    "prefix": "ESX.OpenContext() (ESX)",
+    "body": [
+      "ESX.OpenContext(alignment, elements)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#context",
+    ],
+  },
+  "ESX.RegisterInput": {
+    "prefix": "ESX.RegisterInput (ESX)",
+    "body": [
+      "ESX.RegisterInput(commandName, label, inputGroup, key, onPressed, onReleased)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#registerinput",
+    ],
+  },
+  "ContextMenuClose": {
+    "prefix": "ESX.CloseContext() (ESX)",
+    "body": [
+      "ESX.CloseContext()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions#context",
+    ],
+  },
+  "sharedObject": {
+    "prefix": "ESX.SharedObject (ESX)",
+    "body": [
+      "ESX = exports['es_extended']:getSharedObject()",
+      "-- Or use the documented import method in fxmanifest.lua.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client",
+    ],
+  },
+  "SecureNetEvent": {
+    "prefix": "ESX.SecureNetEvent (ESX)",
+    "body": [
+      "ESX.SecureNetEvent('my_resource:serverOnlyEvent', function(data)",
+      "    print(data)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "DisableSpawnManager": {
+    "prefix": "ESX.DisableSpawnManager (ESX)",
+    "body": [
+      "ESX.DisableSpawnManager()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "SearchInventory": {
+    "prefix": "ESX.SearchInventory (ESX)",
+    "body": [
+      "local item = ESX.SearchInventory('bread')",
+      "if item and item.count > 0 then",
+      "    print(('Bread count: %s'):format(item.count))",
+      "end",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "SpawnPlayer": {
+    "prefix": "ESX.SpawnPlayer (ESX)",
+    "body": [
+      "ESX.SpawnPlayer(coords, skin, function()",
+      "    print('Player spawned')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "Context": {
+    "prefix": "ESX.OpenContext (ESX)",
+    "body": [
+      "ESX.OpenContext('right', {",
+      "    { title = 'Example option', description = 'Choose this option', event = 'my_resource:choose' }",
+      "})",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "TextUI": {
+    "prefix": "ESX.TextUI (ESX)",
+    "body": [
+      "exports['esx_textui']:TextUI('Press E to interact', 'info')",
+      "-- Hide with exports['esx_textui']:HideUI()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "DrawMissionText": {
+    "prefix": "ESX.DrawMissionText (ESX)",
+    "body": [
+      "ESX.DrawMissionText('Mission objective', 5000)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "HashString": {
+    "prefix": "ESX.HashString (ESX)",
+    "body": [
+      "local hash = ESX.HashString('my_string')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "RegisterInput": {
+    "prefix": "ESX.RegisterInput (ESX) [RegisterInput]",
+    "body": [
+      "ESX.RegisterInput('my_action', 'My action', 'keyboard', 'E', function()",
+      "    print('Pressed')",
+      "end, function()",
+      "    print('Released')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "GetAccount": {
+    "prefix": "ESX.GetAccount (ESX)",
+    "body": [
+      "local account = ESX.GetAccount('bank')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/functions",
+    ],
+  },
+  "GetVehicleTypeClient": {
+    "prefix": "ESX.GetVehicleTypeClient (ESX)",
+    "body": ["local vehicleType = ESX.GetVehicleTypeClient(vehicle)"],
+  },
+  "GetShapeTestResultSync": {
+    "prefix": "ESX.Game.GetShapeTestResultSync (ESX)",
+    "body": [
+      "local hit, coords, normal, material, entity = ESX.Game.GetShapeTestResultSync(shapeTestHandle)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/game",
+    ],
+  },
+  "RaycastScreen": {
+    "prefix": "ESX.Game.RaycastScreen (ESX)",
+    "body": [
+      "local hit, coords, normal, material, entity = ESX.Game.RaycastScreen(10.0, -1, PlayerPedId(), 7)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/game",
+    ],
+  },
+  "GetVehicleInDirection": {
+    "prefix": "ESX.Game.GetVehicleInDirection (ESX) [GetVehicleInDirection]",
+    "body": [
+      "local vehicle, coords = ESX.Game.GetVehicleInDirection()",
+      "if vehicle then print('Vehicle found at', coords) end",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/client/modules/game",
+    ],
+  },
+  "TriggerClientCallback": {
+    "prefix": "ESX.TriggerClientCallback (ESX)",
+    "body": [
+      "ESX.TriggerClientCallback(playerId, 'my_resource:getClientData', function(value)",
+      "    print(value)",
+      "end, arg1)",
+      "-- Never trust client-returned values for money, permissions, or other sensitive decisions.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "AwaitClientCallback": {
+    "prefix": "ESX.AwaitClientCallback (ESX)",
+    "body": [
+      "local value = ESX.AwaitClientCallback(playerId, 'my_resource:getClientData', arg1)",
+      "-- Never trust client-returned values for sensitive server decisions.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "GetNumPlayers": {
+    "prefix": "ESX.GetNumPlayers (ESX)",
+    "body": [
+      "local policeCount = ESX.GetNumPlayers('job', 'police')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "Player": {
+    "prefix": "ESX.Player (ESX)",
+    "body": [
+      "local xPlayer = ESX.Player(playerId) -- preferred lightweight player wrapper",
+      "print(xPlayer.getName())",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "ExtendedPlayers": {
+    "prefix": "ESX.ExtendedPlayers (ESX)",
+    "body": [
+      "for _, xPlayer in pairs(ESX.ExtendedPlayers('job', 'police')) do",
+      "    print(xPlayer.getName())",
+      "end",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "GetIdentifier": {
+    "prefix": "ESX.GetIdentifier (ESX)",
+    "body": [
+      "local identifier = ESX.GetIdentifier(playerId)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "GetVehicleType": {
+    "prefix": "ESX.GetVehicleType (ESX)",
+    "body": [
+      "local vehicleType = ESX.GetVehicleType(vehicleModel)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "DiscordLog": {
+    "prefix": "ESX.DiscordLog (ESX)",
+    "body": [
+      "ESX.DiscordLog('My Resource', 'A player performed an action', 'green')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "DiscordLogFields": {
+    "prefix": "ESX.DiscordLogFields (ESX)",
+    "body": [
+      "ESX.DiscordLogFields('My Resource', 'Player action', 'green', {",
+      "    { name = 'Player', value = GetPlayerName(source), inline = true },",
+      "    { name = 'Source', value = tostring(source), inline = true }",
+      "})",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "CreateJob": {
+    "prefix": "ESX.CreateJob (ESX)",
+    "body": [
+      "ESX.CreateJob(jobName, jobLabel, grades)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "RefreshJobs": {
+    "prefix": "ESX.RefreshJobs (ESX)",
+    "body": [
+      "ESX.RefreshJobs()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "AddItems": {
+    "prefix": "ESX.AddItems (ESX)",
+    "body": [
+      "ESX.AddItems(items)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "RefreshItems": {
+    "prefix": "ESX.RefreshItems (ESX)",
+    "body": [
+      "ESX.RefreshItems()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "GetUsableItems": {
+    "prefix": "ESX.GetUsableItems (ESX)",
+    "body": [
+      "local usableItems = ESX.GetUsableItems()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "GetItems": {
+    "prefix": "ESX.GetItems (ESX)",
+    "body": [
+      "local items = ESX.GetItems()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "TriggerClientEvent": {
+    "prefix": "ESX.TriggerClientEvent (ESX)",
+    "body": [
+      "ESX.TriggerClientEvent(eventName, target, ...)",
+      "-- See docs for target semantics and event arguments.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "RegisterPlayerFunctionOverrides": {
+    "prefix": "ESX.RegisterPlayerFunctionOverrides (ESX)",
+    "body": [
+      "ESX.RegisterPlayerFunctionOverrides('myOverride', {",
+      "    myFunction = function(self, ...)",
+      "        -- custom implementation",
+      "    end",
+      "})",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "SetPlayerFunctionOverride": {
+    "prefix": "ESX.SetPlayerFunctionOverride (ESX)",
+    "body": [
+      "ESX.SetPlayerFunctionOverride('myOverride')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/functions",
+    ],
+  },
+  "getPlayTime": {
+    "prefix": "xPlayer.getPlayTime (ESX)",
+    "body": [
+      "local playTimeSeconds = xPlayer.getPlayTime()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "getSSN": {
+    "prefix": "xPlayer.getSSN (ESX)",
+    "body": [
+      "local ssn = xPlayer.getSSN()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "togglePaycheck": {
+    "prefix": "xPlayer.togglePaycheck (ESX)",
+    "body": [
+      "xPlayer.togglePaycheck(enable)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "isPaycheckEnabled": {
+    "prefix": "xPlayer.isPaycheckEnabled (ESX)",
+    "body": [
+      "local enabled = xPlayer.isPaycheckEnabled()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "setGroup": {
+    "prefix": "xPlayer.setGroup (ESX)",
+    "body": [
+      "xPlayer.setGroup(groupName)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "getVariable": {
+    "prefix": "xPlayer.getVariable (ESX)",
+    "body": [
+      "local value = xPlayer.get(key)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "updatePlayerData": {
+    "prefix": "xPlayer.updatePlayerData (ESX)",
+    "body": [
+      "xPlayer.updatePlayerData(key, value)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "updateWeaponAmmo": {
+    "prefix": "xPlayer.updateWeaponAmmo (ESX)",
+    "body": [
+      "xPlayer.updateWeaponAmmo(weaponName, ammo)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "getMaxWeight": {
+    "prefix": "xPlayer.getMaxWeight (ESX)",
+    "body": [
+      "local maxWeight = xPlayer.getMaxWeight()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "syncInventory": {
+    "prefix": "xPlayer.syncInventory (ESX)",
+    "body": [
+      "xPlayer.syncInventory()",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "setMeta": {
+    "prefix": "xPlayer.setMeta (ESX)",
+    "body": [
+      "xPlayer.setMeta(metaKey, value)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "getMeta": {
+    "prefix": "xPlayer.getMeta (ESX)",
+    "body": [
+      "local value = xPlayer.getMeta(metaKey)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "clearMeta": {
+    "prefix": "xPlayer.clearMeta (ESX)",
+    "body": [
+      "xPlayer.clearMeta(metaKey)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "executeCommand": {
+    "prefix": "xPlayer.executeCommand (ESX)",
+    "body": [
+      "xPlayer.executeCommand(command)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "showAdvancedNotification xPlayer": {
+    "prefix": "xPlayer.showAdvancedNotification xPlayer (ESX)",
+    "body": [
+      "xPlayer.showAdvancedNotification(sender, subject, msg, textureDict, iconType, flash, saveToBrief, hudColorIndex)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/server/xplayer",
+    ],
+  },
+  "IsFunctionReference": {
+    "prefix": "ESX.IsFunctionReference (ESX)",
+    "body": [
+      "local isFunction = ESX.IsFunctionReference(callback)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "GetWeaponFromHash": {
+    "prefix": "ESX.GetWeaponFromHash (ESX)",
+    "body": [
+      "local weaponIndex, weapon = ESX.GetWeaponFromHash(joaat('weapon_pistol'))",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "Await": {
+    "prefix": "ESX.Await (ESX)",
+    "body": [
+      "local success, result = ESX.Await(function()",
+      "    return PlayerPedId() ~= 0",
+      "end, 'Player ped was not found', 1000)",
+      "-- Docs advise against relying on ESX.Await server-side.",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "ValidateType": {
+    "prefix": "ESX.ValidateType (ESX)",
+    "body": [
+      "local valid, err = ESX.ValidateType(value, 'string', 'number')",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "IsValidLocaleString": {
+    "prefix": "ESX.IsValidLocaleString (ESX)",
+    "body": [
+      "local valid = ESX.IsValidLocaleString(input, true)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "Math.Round": {
+    "prefix": "ESX.Math.Round (ESX) [Math.Round]",
+    "body": [
+      "local rounded = ESX.Math.Round(number, decimals)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared/math",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/shared",
+    ],
+  },
+  "ClientEventAddInventoryItem": {
+    "prefix": "ClientEventAddInventoryItem (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:addInventoryItem', function(itemName, count)",
+      "    print(('Received %sx %s'):format(count, itemName))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventPlayerJumping": {
+    "prefix": "ClientEventPlayerJumping (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerJumping', function()",
+      "    print('Player jumped')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventEnteringVehicle": {
+    "prefix": "ClientEventEnteringVehicle (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:enteringVehicle', function(plate, seat, netId)",
+      "    print('Entering vehicle:', plate, seat, netId)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventEnteringVehicleAborted": {
+    "prefix": "ClientEventEnteringVehicleAborted (ESX)",
+    "body": [
+      "AddEventHandler('esx:enteringVehicleAborted', function()",
+      "    print('Entering vehicle aborted')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventEnteredVehicle": {
+    "prefix": "ClientEventEnteredVehicle (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:enteredVehicle', function(plate, seat, displayName, netId)",
+      "    print('Entered vehicle:', displayName, plate)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventExitedVehicle": {
+    "prefix": "ClientEventExitedVehicle (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:exitedVehicle', function(plate, seat, displayName, netId)",
+      "    print('Exited vehicle:', displayName, plate)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventPauseMenuActive": {
+    "prefix": "ClientEventPauseMenuActive (ESX)",
+    "body": [
+      "AddEventHandler('esx:pauseMenuActive', function(isActive)",
+      "    print('Pause menu active:', isActive)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventPlayerSpawn": {
+    "prefix": "ClientEventPlayerSpawn (ESX)",
+    "body": [
+      "AddEventHandler('esx:onPlayerSpawn', function()",
+      "    print('Player spawned')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ClientEventSetJob": {
+    "prefix": "ClientEventSetJob (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:setJob', function(job)",
+      "    print('Job updated:', job.name)",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/client",
+    ],
+  },
+  "ImportClient": {
+    "prefix": "ESX import client (ESX)",
+    "body": [
+      "-- fxmanifest.lua",
+      "shared_script '@es_extended/imports.lua'",
+      "-- Then ESX is available globally in the client resource.",
+    ],
+  },
+  "ImportServer": {
+    "prefix": "ESX import server (ESX)",
+    "body": [
+      "-- fxmanifest.lua",
+      "server_script '@es_extended/imports.lua'",
+      "-- Then ESX is available globally in the server resource.",
+    ],
+  },
+  "ServerEventPlayerLoaded": {
+    "prefix": "ServerEventPlayerLoaded (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerLoaded', function(playerId, xPlayer, isNew)",
+      "    print(('%s loaded (new character: %s)'):format(xPlayer.getName(), isNew))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventPlayerLogout": {
+    "prefix": "ServerEventPlayerLogout (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerLogout', function(playerId)",
+      "    print(('Player %s logged out'):format(playerId))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventPlayerDropped": {
+    "prefix": "ServerEventPlayerDropped (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerDropped', function(playerId)",
+      "    print(('Player %s disconnected'):format(playerId))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventUpdateWeaponAmmo": {
+    "prefix": "ServerEventUpdateWeaponAmmo (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:updateWeaponAmmo', function(weaponName, ammoCount)",
+      "    print(('%s now has %s ammo'):format(weaponName, ammoCount))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventOnAddInventoryItem": {
+    "prefix": "ServerEventOnAddInventoryItem (ESX)",
+    "body": [
+      "AddEventHandler('esx:onAddInventoryItem', function(playerId, itemName, itemCount)",
+      "    local xPlayer = ESX.GetPlayerFromId(playerId)",
+      "    if xPlayer then print(xPlayer.getName(), itemName, itemCount) end",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventOnRemoveInventoryItem": {
+    "prefix": "ServerEventOnRemoveInventoryItem (ESX)",
+    "body": [
+      "AddEventHandler('esx:onRemoveInventoryItem', function(playerId, itemName, itemCount)",
+      "    local xPlayer = ESX.GetPlayerFromId(playerId)",
+      "    if xPlayer then print(xPlayer.getName(), itemName, itemCount) end",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventPlayerSaved": {
+    "prefix": "ServerEventPlayerSaved (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerSaved', function(playerId, xPlayer)",
+      "    print(xPlayer.getName() .. ' was saved')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventOnPlayerDeath": {
+    "prefix": "ServerEventOnPlayerDeath (ESX)",
+    "body": [
+      "RegisterNetEvent('esx:onPlayerDeath', function(data)",
+      "    print(('Player %s died; cause: %s'):format(source, data.deathCause))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventSetJob": {
+    "prefix": "ServerEventSetJob (ESX)",
+    "body": [
+      "AddEventHandler('esx:setJob', function(playerId, job, lastJob)",
+      "    print(('Player %s changed from %s to %s'):format(playerId, lastJob.name, job.name))",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ServerEventJobsRefreshed": {
+    "prefix": "ServerEventJobsRefreshed (ESX)",
+    "body": [
+      "AddEventHandler('esx:jobsRefreshed', function()",
+      "    print('ESX jobs were refreshed')",
+      "end)",
+      "-- https://docs.esx-framework.org/en/esx_core/es_extended/events/server",
+    ],
+  },
+  "ESX Point create": {
+    "prefix": "ESX.Point:new (ESX)",
+    "body": [
+      "local point = ESX.Point:new({",
+      "    coords = vector3(${1:0.0}, ${2:0.0}, ${3:0.0}),",
+      "    distance = ${4:15.0},",
+      "    enter = function()",
+      "$0",
+      "    end,",
+      "    leave = function()",
+      "    end,",
+      "    inside = function(point)",
+      "        local distance = point.currDistance",
+      "    end",
+      "})",
+    ],
+    "description": "Create a proximity point using the documented ESX Point class.",
+    "scope": "lua",
+  },
+  "ESX Point delete": {
+    "prefix": "point:delete (ESX)",
+    "body": ["${1:point}:delete()"],
+    "description": "Delete an ESX Point.",
+    "scope": "lua",
+  },
+  "ESX Point toggle": {
+    "prefix": "point:toggle (ESX)",
+    "body": ["${1:point}:toggle(${2:true})"],
+    "description": "Hide or show an ESX Point.",
+    "scope": "lua",
+  },
+  "Lua require module": {
+    "prefix": "require module (ESX)",
+    "body": ["local ${1:module} = require '${2:client.module}'"],
+    "description": "Load a Lua module using the documented ESX require/import convention.",
+    "scope": "lua",
+  },
+  "ESX Await server callback": {
+    "prefix": "ESX.AwaitServerCallback (ESX)",
+    "body": [
+      "local ${1:result} = ESX.AwaitServerCallback('${2:resource:callback}'${3:, ...})",
+    ],
+    "description": "Await a server callback and receive its return value.",
+    "scope": "lua",
+  },
+  "ESX Register client callback": {
+    "prefix": "ESX.RegisterClientCallback (ESX)",
+    "body": [
+      "ESX.RegisterClientCallback('${1:resource:callback}', function(cb)",
+      "    cb(${2:value})",
+      "end)",
+    ],
+    "description": "Register a client callback callable from the server.",
+    "scope": "lua",
+  },
+  "ESX Register interaction": {
+    "prefix": "ESX.RegisterInteraction (ESX)",
+    "body": [
+      "ESX.RegisterInteraction('${1:interaction_name}', function()",
+      "    ${2:-- interaction action}",
+      "end, function()",
+      "    return ${3:canInteract}",
+      "end)",
+    ],
+    "description": "Register an interaction with an onPress handler and condition.",
+    "scope": "lua",
+  },
+  "ESX Get interact key": {
+    "prefix": "ESX.GetInteractKey (ESX)",
+    "body": ["local interactKey = ESX.GetInteractKey()"],
+    "description": "Get the configured global interaction key.",
+    "scope": "lua",
+  },
+  "ESX Scaleform RunMethod": {
+    "prefix": "ESX.Scaleform.Utils.RunMethod (ESX)",
+    "body": [
+      "ESX.Scaleform.Utils.RunMethod(${1:scaleform}, \"${2:METHOD_NAME}\"${3:, ...})",
+    ],
+    "description": "Run a method on a Scaleform movie.",
+    "scope": "lua",
+  },
+  "ESX Scaleform Request": {
+    "prefix": "ESX.Scaleform.Utils.RequestScaleformMovie (ESX)",
+    "body": [
+      "local scaleform = ESX.Scaleform.Utils.RequestScaleformMovie(\"${1:MOVIE_NAME}\")",
+    ],
+    "description": "Request a Scaleform movie handle.",
+    "scope": "lua",
+  },
+  "ESX SearchInventory": {
+    "prefix": "ESX.SearchInventory (ESX) [ESX SearchInventory]",
+    "body": [
+      "local ${1:items} = ESX.SearchInventory(${2:searchType}, ${3:itemName})",
+    ],
+    "description": "Search the client inventory.",
+    "scope": "lua",
+  },
+  "ESX Progressbar": {
+    "prefix": "ESX.Progressbar (ESX)",
+    "body": [
+      "ESX.Progressbar(\"${1:label}\", ${2:duration}, {",
+      "    FreezePlayer = ${3:false},",
+      "    animation = {",
+      "        type = \"${4: anim}\",",
+      "        dict = \"${5:animDict}\",",
+      "        lib = \"${6:animName}\"",
+      "    },",
+      "    onFinish = function()",
+      "$0",
+      "    end,",
+      "    onCancel = function()",
+      "    end",
+      "})",
+    ],
+    "description": "Display an ESX progress bar.",
+    "scope": "lua",
+  },
+  "ESX HideUI": {
+    "prefix": "ESX.HideUI (ESX)",
+    "body": ["ESX.HideUI()"],
+    "description": "Hide the ESX Text UI.",
+    "scope": "lua",
+  },
+  "ESX TextUI": {
+    "prefix": "ESX.TextUI (ESX) [ESX TextUI]",
+    "body": ["ESX.TextUI(\"${1:Text}\", \"${2:info}\", ${3:position})"],
+    "description": "Show the ESX Text UI.",
+    "scope": "lua",
+  },
+  "ESX DrawMissionText": {
+    "prefix": "ESX.DrawMissionText (ESX) [ESX DrawMissionText]",
+    "body": ["ESX.DrawMissionText(\"${1:Text}\", ${2:duration})"],
+    "description": "Draw mission text.",
+    "scope": "lua",
+  },
+  "ESX HashString": {
+    "prefix": "ESX.HashString (ESX) [ESX HashString]",
+    "body": ["local hash = ESX.HashString(\"${1:string}\")"],
+    "description": "Hash a string using ESX.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetPlayersInArea": {
+    "prefix": "ESX.OneSync.GetPlayersInArea (ESX)",
+    "body": [
+      "local players = ESX.OneSync.GetPlayersInArea(${1:playerId}, ${2:radius}, ${3:ignoreTable})",
+    ],
+    "description": "Get players in a radius using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetClosestPlayer": {
+    "prefix": "ESX.OneSync.GetClosestPlayer (ESX)",
+    "body": [
+      "local player, distance = ESX.OneSync.GetClosestPlayer(${1:playerId}, ${2:ignoreTable})",
+    ],
+    "description": "Find the closest player using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync SpawnVehicle": {
+    "prefix": "ESX.OneSync.SpawnVehicle (ESX)",
+    "body": [
+      "ESX.OneSync.SpawnVehicle(${1:vehicleType}, ${2:model}, ${3:coords}, ${4:heading}, ${5:properties}, function(vehicle)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Spawn a networked vehicle using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync SpawnObject": {
+    "prefix": "ESX.OneSync.SpawnObject (ESX)",
+    "body": [
+      "ESX.OneSync.SpawnObject(${1:model}, ${2:coords}, function(object)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Spawn a networked object using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync SpawnPed": {
+    "prefix": "ESX.OneSync.SpawnPed (ESX)",
+    "body": [
+      "ESX.OneSync.SpawnPed(${1:model}, ${2:coords}, ${3:heading}, function(ped)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Spawn a networked ped using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync SpawnPedInVehicle": {
+    "prefix": "ESX.OneSync.SpawnPedInVehicle (ESX)",
+    "body": [
+      "ESX.OneSync.SpawnPedInVehicle(${1:model}, ${2:vehicle}, ${3:seat}, function(ped)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Spawn a ped in a vehicle using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetPedsInArea": {
+    "prefix": "ESX.OneSync.GetPedsInArea (ESX)",
+    "body": [
+      "local peds = ESX.OneSync.GetPedsInArea(${1:coords}, ${2:radius})",
+    ],
+    "description": "Get peds in an area using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetObjectsInArea": {
+    "prefix": "ESX.OneSync.GetObjectsInArea (ESX)",
+    "body": [
+      "local objects = ESX.OneSync.GetObjectsInArea(${1:coords}, ${2:radius})",
+    ],
+    "description": "Get objects in an area using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetVehiclesInArea": {
+    "prefix": "ESX.OneSync.GetVehiclesInArea (ESX)",
+    "body": [
+      "local vehicles = ESX.OneSync.GetVehiclesInArea(${1:coords}, ${2:radius})",
+    ],
+    "description": "Get vehicles in an area using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetClosestPed": {
+    "prefix": "ESX.OneSync.GetClosestPed (ESX)",
+    "body": [
+      "local ped, distance = ESX.OneSync.GetClosestPed(${1:playerId}, ${2:ignoreTable})",
+    ],
+    "description": "Find the closest ped using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetClosestObject": {
+    "prefix": "ESX.OneSync.GetClosestObject (ESX)",
+    "body": [
+      "local object, distance = ESX.OneSync.GetClosestObject(${1:playerId}, ${2:ignoreTable})",
+    ],
+    "description": "Find the closest object using OneSync.",
+    "scope": "lua",
+  },
+  "ESX OneSync GetClosestVehicle": {
+    "prefix": "ESX.OneSync.GetClosestVehicle (ESX)",
+    "body": [
+      "local vehicle, distance = ESX.OneSync.GetClosestVehicle(${1:playerId}, ${2:ignoreTable})",
+    ],
+    "description": "Find the closest vehicle using OneSync.",
+    "scope": "lua",
+  },
+  "ESX GetNumPlayers": {
+    "prefix": "ESX.GetNumPlayers (ESX) [ESX GetNumPlayers]",
+    "body": ["local playerCount = ESX.GetNumPlayers()"],
+    "description": "Get the number of connected players.",
+    "scope": "lua",
+  },
+  "ESX Player": {
+    "prefix": "ESX.Player (ESX) [ESX Player]",
+    "body": ["local xPlayer = ESX.Player(${1:playerId})"],
+    "description": "Get a player object using the documented ESX.Player helper.",
+    "scope": "lua",
+  },
+  "ESX GetIdentifier": {
+    "prefix": "ESX.GetIdentifier (ESX) [ESX GetIdentifier]",
+    "body": ["local identifier = ESX.GetIdentifier(${1:playerId})"],
+    "description": "Get a player identifier.",
+    "scope": "lua",
+  },
+  "ESX GetVehicleType": {
+    "prefix": "ESX.GetVehicleType (ESX) [ESX GetVehicleType]",
+    "body": ["local vehicleType = ESX.GetVehicleType(${1:model})"],
+    "description": "Get the ESX vehicle type for a model.",
+    "scope": "lua",
+  },
+  "ESX DiscordLog": {
+    "prefix": "ESX.DiscordLog (ESX) [ESX DiscordLog]",
+    "body": ["ESX.DiscordLog(\"${1:title}\", \"${2:message}\")"],
+    "description": "Send a message to the configured ESX Discord log.",
+    "scope": "lua",
+  },
+  "ESX DiscordLogFields": {
+    "prefix": "ESX.DiscordLogFields (ESX) [ESX DiscordLogFields]",
+    "body": [
+      "ESX.DiscordLogFields(\"${1:title}\", \"${2:message}\", {",
+      "    { name = \"${3:Field}\", value = \"${4:Value}\", inline = ${5:true} }",
+      "})",
+    ],
+    "description": "Send a Discord log with embed fields.",
+    "scope": "lua",
+  },
+  "ESX CreateJob": {
+    "prefix": "ESX.CreateJob (ESX) [ESX CreateJob]",
+    "body": [
+      "ESX.CreateJob(\"${1:jobName}\", {",
+      "    label = \"${2:Job Label}\",",
+      "    grades = {",
+      "        [0] = { name = \"${3:recruit}\", label = \"${4:Recruit}\", salary = ${5:0} }",
+      "    }",
+      "})",
+    ],
+    "description": "Create/register a job at runtime.",
+    "scope": "lua",
+  },
+  "ESX RefreshJobs": {
+    "prefix": "ESX.RefreshJobs (ESX) [ESX RefreshJobs]",
+    "body": ["ESX.RefreshJobs()"],
+    "description": "Refresh the server job cache.",
+    "scope": "lua",
+  },
+  "ESX AddItems": {
+    "prefix": "ESX.AddItems (ESX) [ESX AddItems]",
+    "body": [
+      "ESX.AddItems({",
+      "    { name = \"${1:item_name}\", label = \"${2:Item Label}\", weight = ${3:1} }",
+      "})",
+    ],
+    "description": "Add item definitions at runtime.",
+    "scope": "lua",
+  },
+  "ESX RefreshItems": {
+    "prefix": "ESX.RefreshItems (ESX) [ESX RefreshItems]",
+    "body": ["ESX.RefreshItems()"],
+    "description": "Refresh the server item cache.",
+    "scope": "lua",
+  },
+  "ESX GetUsableItems": {
+    "prefix": "ESX.GetUsableItems (ESX) [ESX GetUsableItems]",
+    "body": ["local usableItems = ESX.GetUsableItems()"],
+    "description": "Get registered usable items.",
+    "scope": "lua",
+  },
+  "ESX GetItems": {
+    "prefix": "ESX.GetItems (ESX) [ESX GetItems]",
+    "body": ["local items = ESX.GetItems()"],
+    "description": "Get registered item definitions.",
+    "scope": "lua",
+  },
+  "ESX TriggerClientEvent": {
+    "prefix": "ESX.TriggerClientEvent (ESX) [ESX TriggerClientEvent]",
+    "body": [
+      "ESX.TriggerClientEvent(\"${1:eventName}\", ${2:playerId}, ${3:...})",
+    ],
+    "description": "Trigger a client event through the ESX helper.",
+    "scope": "lua",
+  },
+  "ESX RegisterPlayerFunctionOverrides": {
+    "prefix": "ESX.RegisterPlayerFunctionOverrides (ESX) [ESX RegisterPlayerFunctionOverrides]",
+    "body": ["ESX.RegisterPlayerFunctionOverrides(${1:overrideTable})"],
+    "description": "Register xPlayer function overrides.",
+    "scope": "lua",
+  },
+  "ESX SetPlayerFunctionOverride": {
+    "prefix": "ESX.SetPlayerFunctionOverride (ESX) [ESX SetPlayerFunctionOverride]",
+    "body": [
+      "ESX.SetPlayerFunctionOverride(\"${1:functionName}\", ${2:function})",
+    ],
+    "description": "Set a player function override.",
+    "scope": "lua",
+  },
+  "ESX TriggerClientCallback": {
+    "prefix": "ESX.TriggerClientCallback (ESX) [ESX TriggerClientCallback]",
+    "body": [
+      "ESX.TriggerClientCallback('${1:resource:callback}', ${2:playerId}, function(result)",
+      "    $0",
+      "end${3:, ...})",
+    ],
+    "description": "Trigger a callback registered on the client.",
+    "scope": "lua",
+  },
+  "ESX AwaitClientCallback": {
+    "prefix": "ESX.AwaitClientCallback (ESX) [ESX AwaitClientCallback]",
+    "body": [
+      "local result = ESX.AwaitClientCallback('${1:resource:callback}', ${2:playerId}${3:, ...})",
+    ],
+    "description": "Await a client callback. Treat client-provided data as untrusted.",
+    "scope": "lua",
+  },
+  "ESX Server callback": {
+    "prefix": "ESX.RegisterServerCallback (ESX) [ESX Server callback]",
+    "body": [
+      "ESX.RegisterServerCallback('${1:resource:callback}', function(source, cb, ...)",
+      "    local xPlayer = ESX.GetPlayerFromId(source)",
+      "    if not xPlayer then return cb(nil) end",
+      "$0",
+      "    cb(${2:result})",
+      "end)",
+    ],
+    "description": "Register a server callback.",
+    "scope": "lua",
+  },
+  "xPlayer getMaxWeight": {
+    "prefix": "xPlayer.getMaxWeight (ESX) [xPlayer getMaxWeight]",
+    "body": ["local maxWeight = xPlayer.getMaxWeight()"],
+    "description": "Get the player maximum carry weight.",
+    "scope": "lua",
+  },
+  "xPlayer syncInventory": {
+    "prefix": "xPlayer.syncInventory (ESX) [xPlayer syncInventory]",
+    "body": ["xPlayer.syncInventory()"],
+    "description": "Synchronize the player inventory.",
+    "scope": "lua",
+  },
+  "xPlayer executeCommand": {
+    "prefix": "xPlayer.executeCommand (ESX) [xPlayer executeCommand]",
+    "body": ["xPlayer.executeCommand(\"${1:command}\")"],
+    "description": "Execute a command as the player.",
+    "scope": "lua",
+  },
+  "xPlayer setMeta": {
+    "prefix": "xPlayer.setMeta (ESX) [xPlayer setMeta]",
+    "body": ["xPlayer.setMeta(\"${1:key}\", ${2:value})"],
+    "description": "Set player metadata.",
+    "scope": "lua",
+  },
+  "xPlayer getMeta": {
+    "prefix": "xPlayer.getMeta (ESX) [xPlayer getMeta]",
+    "body": ["local value = xPlayer.getMeta(\"${1:key}\")"],
+    "description": "Get player metadata.",
+    "scope": "lua",
+  },
+  "xPlayer clearMeta": {
+    "prefix": "xPlayer.clearMeta (ESX) [xPlayer clearMeta]",
+    "body": ["xPlayer.clearMeta(\"${1:key}\")"],
+    "description": "Clear player metadata.",
+    "scope": "lua",
+  },
+  "xPlayer getVariable": {
+    "prefix": "xPlayer.get (ESX)",
+    "body": ["local value = xPlayer.get(\"${1:key}\")"],
+    "description": "Get a player variable using the documented xPlayer getter.",
+    "scope": "lua",
+  },
+  "xPlayer setVariable": {
+    "prefix": "xPlayer.set (ESX)",
+    "body": ["xPlayer.set(\"${1:key}\", ${2:value})"],
+    "description": "Set a player variable.",
+    "scope": "lua",
+  },
+  "xPlayer showAdvancedNotification": {
+    "prefix": "xPlayer.showAdvancedNotification (ESX)",
+    "body": [
+      "xPlayer.showAdvancedNotification(${1:sender}, ${2:subject}, ${3:message}, ${4:textureDict}, ${5:iconType})",
+    ],
+    "description": "Show an advanced notification to this player.",
+    "scope": "lua",
+  },
+  "ESX.Table SizeOf": {
+    "prefix": "ESX.Table.SizeOf (ESX)",
+    "body": ["local result = ESX.Table.SizeOf(table)"],
+    "description": "Get the size of a table.",
+    "scope": "lua",
+  },
+  "ESX.Table Set": {
+    "prefix": "ESX.Table.Set (ESX)",
+    "body": ["local result = ESX.Table.Set(table)"],
+    "description": "Set all values in a table to true.",
+    "scope": "lua",
+  },
+  "ESX.Table IndexOf": {
+    "prefix": "ESX.Table.IndexOf (ESX)",
+    "body": ["local result = ESX.Table.IndexOf(table, value)"],
+    "description": "Find the index of a value.",
+    "scope": "lua",
+  },
+  "ESX.Table LastIndexOf": {
+    "prefix": "ESX.Table.LastIndexOf (ESX)",
+    "body": ["local result = ESX.Table.LastIndexOf(table, value)"],
+    "description": "Find the last index of a value.",
+    "scope": "lua",
+  },
+  "ESX.Table Find": {
+    "prefix": "ESX.Table.Find (ESX)",
+    "body": ["local result = ESX.Table.Find(table, predicate)"],
+    "description": "Find a matching table value.",
+    "scope": "lua",
+  },
+  "ESX.Table FindIndex": {
+    "prefix": "ESX.Table.FindIndex (ESX)",
+    "body": ["local result = ESX.Table.FindIndex(table, predicate)"],
+    "description": "Find the index of a matching value.",
+    "scope": "lua",
+  },
+  "ESX.Table Filter": {
+    "prefix": "ESX.Table.Filter (ESX)",
+    "body": ["local result = ESX.Table.Filter(table, predicate)"],
+    "description": "Filter a table.",
+    "scope": "lua",
+  },
+  "ESX.Table Map": {
+    "prefix": "ESX.Table.Map (ESX)",
+    "body": ["local result = ESX.Table.Map(table, callback)"],
+    "description": "Map table values.",
+    "scope": "lua",
+  },
+  "ESX.Table Reverse": {
+    "prefix": "ESX.Table.Reverse (ESX)",
+    "body": ["local result = ESX.Table.Reverse(table)"],
+    "description": "Reverse a table.",
+    "scope": "lua",
+  },
+  "ESX.Table Clone": {
+    "prefix": "ESX.Table.Clone (ESX)",
+    "body": ["local result = ESX.Table.Clone(table)"],
+    "description": "Clone a table.",
+    "scope": "lua",
+  },
+  "ESX.Table Concat": {
+    "prefix": "ESX.Table.Concat (ESX)",
+    "body": ["local result = ESX.Table.Concat(table1, table2)"],
+    "description": "Concatenate tables.",
+    "scope": "lua",
+  },
+  "ESX.Table Join": {
+    "prefix": "ESX.Table.Join (ESX)",
+    "body": ["local result = ESX.Table.Join(table, separator)"],
+    "description": "Join table values into a string.",
+    "scope": "lua",
+  },
+  "ESX.Table TableContains": {
+    "prefix": "ESX.Table.TableContains (ESX)",
+    "body": ["local result = ESX.Table.TableContains(table, value)"],
+    "description": "Check whether a table contains a value.",
+    "scope": "lua",
+  },
+  "ESX.Table Sort": {
+    "prefix": "ESX.Table.Sort (ESX)",
+    "body": ["local result = ESX.Table.Sort(table, comparator)"],
+    "description": "Sort a table.",
+    "scope": "lua",
+  },
+  "ESX.Table ToArray": {
+    "prefix": "ESX.Table.ToArray (ESX)",
+    "body": ["local result = ESX.Table.ToArray(table)"],
+    "description": "Convert a table to an array.",
+    "scope": "lua",
+  },
+  "ESX Math GetHeadingFromCoords": {
+    "prefix": "ESX.Math.GetHeadingFromCoords (ESX)",
+    "body": [
+      "local heading = ESX.Math.GetHeadingFromCoords(${1:fromCoords}, ${2:toCoords})",
+    ],
+    "description": "Get a heading from two coordinate vectors.",
+    "scope": "lua",
+  },
+  "ESX Await": {
+    "prefix": "ESX.Await (ESX) [ESX Await]",
+    "body": ["local result = ESX.Await(${1:promise})"],
+    "description": "Await a promise using the shared ESX helper.",
+    "scope": "lua",
+  },
+  "ESX Config Main": {
+    "prefix": "ESX config main (ESX)",
+    "body": [
+      "-- es_extended/shared/config/main.lua",
+      "-- Main config properties documented by ESX Legacy.",
+      "Config.CustomInventory = '${1:ox}' -- or false",
+      "Config.Accounts = {",
+      "    bitcoin = { label = \"Bitcoin\", round = false }",
+      "}",
+      "Config.StartingAccountMoney = {",
+      "    bank = ${2:50000},",
+      "    money = ${3:1500},",
+      "    black_money = ${4:500}",
+      "}",
+      "Config.StartingInventoryItems = { bread = ${5:2}, water = ${6:4} }",
+      "Config.DefaultSpawns = { { x = ${7:222.2}, y = ${8:-864.0}, z = ${9:30.29}, heading = ${10:1.0} } }",
+      "Config.AdminGroups = { admin = true, superadmin = true }",
+      "-- See docs for additional documented properties (EnablePaycheck, MaxWeight, Identity, etc.).",
+    ],
+    "description": "Starter structure for the documented main ESX config. Verify option names against your installed version.",
+    "scope": "lua",
+  },
+  "ESX Config Logs": {
+    "prefix": "ESX config logs (ESX)",
+    "body": [
+      "-- es_extended/shared/config/logs.lua",
+      "-- Discord logging can be slow/unreliable and is not recommended for production.",
+      "Webhooks = {",
+      "    default = '${1:}',",
+      "    test = '${2:}',",
+      "    Chat = '${3:}',",
+      "    UserActions = '${4:}',",
+      "    Resources = '${5:}',",
+      "    Paycheck = '${6:}',",
+      "    Police = '${7:}' -- Custom webhook example",
+      "},",
+      "-- Keep webhook URLs private and server-side.",
+    ],
+    "description": "Discord logging config template; confirm exact keys in your current config/logs file.",
+    "scope": "lua",
+  },
+  "ESX Config Weapon": {
+    "prefix": "ESX config weapon (ESX)",
+    "body": [
+      "-- es_extended/shared/config/weapons.lua",
+      "Config.Weapons = Config.Weapons or {}",
+      "Config.Weapons[#Config.Weapons + 1] = {",
+      "    name = '${1:WEAPON_PISTOL}',",
+      "    label = '${2:Pistol}',",
+      "    ammo = { label = \"round(s)\", hash = `AMMO_PISTOL` },",
+      "    tints = Config.DefaultWeaponTints,",
+      "    components = {",
+      "        { name = '${3:clip_default}', label = 'Default Magazine', hash = `COMPONENT_PISTOL_CLIP_01` }",
+      "    }",
+      "}",
+    ],
+    "description": "Weapon configuration scaffold; use the documented weapon config structure for your ESX version.",
+    "scope": "lua",
+  },
+  "ESX Config Adjustments": {
+    "prefix": "ESX config adjustments (ESX)",
+    "body": [
+      "-- es_extended/shared/config/adjustments.lua",
+      "Config.DisableHealthRegeneration = ${1:false}",
+      "Config.DisableVehicleRewards = ${2:false}",
+      "Config.DisableNPCDrops = ${3:false}",
+      "Config.DisableDispatchServices = ${4:false}",
+      "Config.DisableScenarios = ${5:false}",
+      "Config.DisableAimAssist = ${6:false}",
+      "Config.DisableVehicleSeatShuff = ${7:false}",
+      "Config.DisableDisplayAmmo = ${8:false}",
+      "Config.EnablePVP = ${9:true}",
+      "Config.EnableWantedLevel = ${10:false}",
+      "Config.RemoveHudComponents = { [1] = false, [2] = false, [3] = false }",
+      "-- Other documented properties include CustomAIPlates and DiscordActivity.",
+    ],
+    "description": "Adjustment config scaffold; the docs describe this file as version/configuration adjustments.",
+    "scope": "lua",
+  },
+  "Client event addInventoryItem": {
+    "prefix": "event esx:addInventoryItem (ESX)",
+    "body": [
+      "AddEventHandler('esx:addInventoryItem', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:addInventoryItem.",
+    "scope": "lua",
+  },
+  "Client event playerLoaded": {
+    "prefix": "event esx:playerLoaded (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerLoaded', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:playerLoaded.",
+    "scope": "lua",
+  },
+  "Client event onPlayerDeath": {
+    "prefix": "event esx:onPlayerDeath (ESX)",
+    "body": [
+      "AddEventHandler('esx:onPlayerDeath', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:onPlayerDeath.",
+    "scope": "lua",
+  },
+  "Client event playerJumping": {
+    "prefix": "event esx:playerJumping (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerJumping', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:playerJumping.",
+    "scope": "lua",
+  },
+  "Client event enteringVehicle": {
+    "prefix": "event esx:enteringVehicle (ESX)",
+    "body": [
+      "AddEventHandler('esx:enteringVehicle', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:enteringVehicle.",
+    "scope": "lua",
+  },
+  "Client event enteringVehicleAborted": {
+    "prefix": "event esx:enteringVehicleAborted (ESX)",
+    "body": [
+      "AddEventHandler('esx:enteringVehicleAborted', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:enteringVehicleAborted.",
+    "scope": "lua",
+  },
+  "Client event enteredVehicle": {
+    "prefix": "event esx:enteredVehicle (ESX)",
+    "body": [
+      "AddEventHandler('esx:enteredVehicle', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:enteredVehicle.",
+    "scope": "lua",
+  },
+  "Client event exitedVehicle": {
+    "prefix": "event esx:exitedVehicle (ESX)",
+    "body": [
+      "AddEventHandler('esx:exitedVehicle', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:exitedVehicle.",
+    "scope": "lua",
+  },
+  "Client event pauseMenuActive": {
+    "prefix": "event esx:pauseMenuActive (ESX)",
+    "body": [
+      "AddEventHandler('esx:pauseMenuActive', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:pauseMenuActive.",
+    "scope": "lua",
+  },
+  "Client event onPlayerSpawn": {
+    "prefix": "event esx:onPlayerSpawn (ESX)",
+    "body": [
+      "AddEventHandler('esx:onPlayerSpawn', function(data)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented client event esx:onPlayerSpawn.",
+    "scope": "lua",
+  },
+  "Client event setJob": {
+    "prefix": "event esx:setJob (ESX)",
+    "body": ["AddEventHandler('esx:setJob', function(data)", "    $0", "end)"],
+    "description": "Handle the documented client event esx:setJob.",
+    "scope": "lua",
+  },
+  "Server event playerLoaded": {
+    "prefix": "event esx:playerLoaded (ESX) [Server event playerLoaded]",
+    "body": [
+      "AddEventHandler('esx:playerLoaded', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:playerLoaded.",
+    "scope": "lua",
+  },
+  "Server event playerLogout": {
+    "prefix": "event esx:playerLogout (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerLogout', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:playerLogout.",
+    "scope": "lua",
+  },
+  "Server event playerDropped": {
+    "prefix": "event esx:playerDropped (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerDropped', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:playerDropped.",
+    "scope": "lua",
+  },
+  "Server event updateWeaponAmmo": {
+    "prefix": "event esx:updateWeaponAmmo (ESX)",
+    "body": [
+      "AddEventHandler('esx:updateWeaponAmmo', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:updateWeaponAmmo.",
+    "scope": "lua",
+  },
+  "Server event onAddInventoryItem": {
+    "prefix": "event esx:onAddInventoryItem (ESX)",
+    "body": [
+      "AddEventHandler('esx:onAddInventoryItem', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:onAddInventoryItem.",
+    "scope": "lua",
+  },
+  "Server event onRemoveInventoryItem": {
+    "prefix": "event esx:onRemoveInventoryItem (ESX)",
+    "body": [
+      "AddEventHandler('esx:onRemoveInventoryItem', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:onRemoveInventoryItem.",
+    "scope": "lua",
+  },
+  "Server event playerSaved": {
+    "prefix": "event esx:playerSaved (ESX)",
+    "body": [
+      "AddEventHandler('esx:playerSaved', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:playerSaved.",
+    "scope": "lua",
+  },
+  "Server event onPlayerDeath": {
+    "prefix": "event esx:onPlayerDeath (ESX) [Server event onPlayerDeath]",
+    "body": [
+      "AddEventHandler('esx:onPlayerDeath', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:onPlayerDeath.",
+    "scope": "lua",
+  },
+  "Server event setJob": {
+    "prefix": "event esx:setJob (ESX) [Server event setJob]",
+    "body": [
+      "AddEventHandler('esx:setJob', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:setJob.",
+    "scope": "lua",
+  },
+  "Server event jobsRefreshed": {
+    "prefix": "event esx:jobsRefreshed (ESX)",
+    "body": [
+      "AddEventHandler('esx:jobsRefreshed', function(playerId, ...)",
+      "    $0",
+      "end)",
+    ],
+    "description": "Handle the documented server event esx:jobsRefreshed.",
+    "scope": "lua",
+  },
+  "PlayerData coords": {
+    "prefix": "ESX.PlayerData.coords (ESX)",
+    "body": ["local coords = ESX.PlayerData.coords"],
+    "description": "Access the documented client PlayerData field: coords.",
+    "scope": "lua",
+  },
+  "PlayerData ped": {
+    "prefix": "ESX.PlayerData.ped (ESX)",
+    "body": ["local ped = ESX.PlayerData.ped"],
+    "description": "Access the documented client PlayerData field: ped.",
+    "scope": "lua",
+  },
+  "PlayerData group": {
+    "prefix": "ESX.PlayerData.group (ESX)",
+    "body": ["local group = ESX.PlayerData.group"],
+    "description": "Access the documented client PlayerData field: group.",
+    "scope": "lua",
+  },
+  "PlayerData identifier": {
+    "prefix": "ESX.PlayerData.identifier (ESX)",
+    "body": ["local identifier = ESX.PlayerData.identifier"],
+    "description": "Access the documented client PlayerData field: identifier.",
+    "scope": "lua",
+  },
+  "PlayerData ssn": {
+    "prefix": "ESX.PlayerData.ssn (ESX)",
+    "body": ["local ssn = ESX.PlayerData.ssn"],
+    "description": "Access the documented client PlayerData field: ssn.",
+    "scope": "lua",
+  },
+  "PlayerData inventory": {
+    "prefix": "ESX.PlayerData.inventory (ESX)",
+    "body": ["local inventory = ESX.PlayerData.inventory"],
+    "description": "Access the documented client PlayerData field: inventory.",
+    "scope": "lua",
+  },
+  "PlayerData job": {
+    "prefix": "ESX.PlayerData.job (ESX)",
+    "body": ["local job = ESX.PlayerData.job"],
+    "description": "Access the documented client PlayerData field: job.",
+    "scope": "lua",
+  },
+  "PlayerData loadout": {
+    "prefix": "ESX.PlayerData.loadout (ESX)",
+    "body": ["local loadout = ESX.PlayerData.loadout"],
+    "description": "Access the documented client PlayerData field: loadout.",
+    "scope": "lua",
+  },
+  "PlayerData name": {
+    "prefix": "ESX.PlayerData.name (ESX)",
+    "body": ["local name = ESX.PlayerData.name"],
+    "description": "Access the documented client PlayerData field: name.",
+    "scope": "lua",
+  },
+  "PlayerData playerId": {
+    "prefix": "ESX.PlayerData.playerId (ESX)",
+    "body": ["local playerId = ESX.PlayerData.playerId"],
+    "description": "Access the documented client PlayerData field: playerId.",
+    "scope": "lua",
+  },
+  "PlayerData source": {
+    "prefix": "ESX.PlayerData.source (ESX)",
+    "body": ["local source = ESX.PlayerData.source"],
+    "description": "Access the documented client PlayerData field: source.",
+    "scope": "lua",
+  },
+  "PlayerData variables": {
+    "prefix": "ESX.PlayerData.variables (ESX)",
+    "body": ["local variables = ESX.PlayerData.variables"],
+    "description": "Access the documented client PlayerData field: variables.",
+    "scope": "lua",
+  },
+  "PlayerData weight": {
+    "prefix": "ESX.PlayerData.weight (ESX)",
+    "body": ["local weight = ESX.PlayerData.weight"],
+    "description": "Access the documented client PlayerData field: weight.",
+    "scope": "lua",
+  },
+  "PlayerData maxWeight": {
+    "prefix": "ESX.PlayerData.maxWeight (ESX)",
+    "body": ["local maxWeight = ESX.PlayerData.maxWeight"],
+    "description": "Access the documented client PlayerData field: maxWeight.",
+    "scope": "lua",
+  },
+  "PlayerData metadata": {
+    "prefix": "ESX.PlayerData.metadata (ESX)",
+    "body": ["local metadata = ESX.PlayerData.metadata"],
+    "description": "Access the documented client PlayerData field: metadata.",
+    "scope": "lua",
+  },
+  "PlayerData admin": {
+    "prefix": "ESX.PlayerData.admin (ESX)",
+    "body": ["local admin = ESX.PlayerData.admin"],
+    "description": "Access the documented client PlayerData field: admin.",
+    "scope": "lua",
+  },
+  "PlayerData license": {
+    "prefix": "ESX.PlayerData.license (ESX)",
+    "body": ["local license = ESX.PlayerData.license"],
+    "description": "Access the documented client PlayerData field: license.",
+    "scope": "lua",
+  },
+  "PlayerData dateofbirth": {
+    "prefix": "ESX.PlayerData.dateofbirth (ESX)",
+    "body": ["local dateofbirth = ESX.PlayerData.dateofbirth"],
+    "description": "Access the documented client PlayerData field: dateofbirth.",
+    "scope": "lua",
+  },
+  "PlayerData height": {
+    "prefix": "ESX.PlayerData.height (ESX)",
+    "body": ["local height = ESX.PlayerData.height"],
+    "description": "Access the documented client PlayerData field: height.",
+    "scope": "lua",
+  },
+  "PlayerData dead": {
+    "prefix": "ESX.PlayerData.dead (ESX)",
+    "body": ["local dead = ESX.PlayerData.dead"],
+    "description": "Access the documented client PlayerData field: dead.",
+    "scope": "lua",
+  },
+  "PlayerData firstName": {
+    "prefix": "ESX.PlayerData.firstName (ESX)",
+    "body": ["local firstName = ESX.PlayerData.firstName"],
+    "description": "Access the documented client PlayerData field: firstName.",
+    "scope": "lua",
+  },
+  "PlayerData lastName": {
+    "prefix": "ESX.PlayerData.lastName (ESX)",
+    "body": ["local lastName = ESX.PlayerData.lastName"],
+    "description": "Access the documented client PlayerData field: lastName.",
+    "scope": "lua",
+  },
+  "PlayerData sex": {
+    "prefix": "ESX.PlayerData.sex (ESX)",
+    "body": ["local sex = ESX.PlayerData.sex"],
+    "description": "Access the documented client PlayerData field: sex.",
+    "scope": "lua",
+  },
+  "PlayerData money": {
+    "prefix": "ESX.PlayerData.money (ESX)",
+    "body": ["local money = ESX.PlayerData.money"],
+    "description": "Access the documented client PlayerData field: money.",
+    "scope": "lua",
+  },
+  "PlayerData accounts": {
+    "prefix": "ESX.PlayerData.accounts (ESX)",
+    "body": ["local accounts = ESX.PlayerData.accounts"],
+    "description": "Access the documented client PlayerData field: accounts.",
+    "scope": "lua",
+  },
+  "ESX command clear": {
+    "prefix": "ESX command /clear (ESX)",
+    "body": ["-- Built-in es_extended command: /clear", "-- Clear chat."],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command group": {
+    "prefix": "ESX command /group (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /group",
+      "-- Show permission group.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command job": {
+    "prefix": "ESX command /job (ESX)",
+    "body": ["-- Built-in es_extended command: /job", "-- Show current job."],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command info": {
+    "prefix": "ESX command /info (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /info",
+      "-- Show character information.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command playtime": {
+    "prefix": "ESX command /playtime (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /playtime",
+      "-- Show character playtime.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command setcoords": {
+    "prefix": "ESX command /setcoords (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /setcoords",
+      "-- Admin: set coordinates.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command setjob": {
+    "prefix": "ESX command /setjob (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /setjob",
+      "-- Admin: set player job.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command car": {
+    "prefix": "ESX command /car (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /car",
+      "-- Admin: spawn a vehicle.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command dv": {
+    "prefix": "ESX command /dv (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /dv",
+      "-- Admin: delete vehicle.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command fix": {
+    "prefix": "ESX command /fix (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /fix",
+      "-- Admin: repair vehicle.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command setaccountmoney": {
+    "prefix": "ESX command /setaccountmoney (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /setaccountmoney",
+      "-- Admin: set account balance.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command giveaccountmoney": {
+    "prefix": "ESX command /giveaccountmoney (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /giveaccountmoney",
+      "-- Admin: give account money.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command removeaccountmoney": {
+    "prefix": "ESX command /removeaccountmoney (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /removeaccountmoney",
+      "-- Admin: remove account money.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command giveitem": {
+    "prefix": "ESX command /giveitem (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /giveitem",
+      "-- Admin: give an item.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command giveweapon": {
+    "prefix": "ESX command /giveweapon (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /giveweapon",
+      "-- Admin: give a weapon.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command giveammo": {
+    "prefix": "ESX command /giveammo (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /giveammo",
+      "-- Admin: give weapon ammo.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command giveweaponcomponent": {
+    "prefix": "ESX command /giveweaponcomponent (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /giveweaponcomponent",
+      "-- Admin: give weapon component.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command clearall": {
+    "prefix": "ESX command /clearall (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /clearall",
+      "-- Admin: clear all players.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command refreshjobs": {
+    "prefix": "ESX command /refreshjobs (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /refreshjobs",
+      "-- Admin: refresh jobs.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command refreshitems": {
+    "prefix": "ESX command /refreshitems (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /refreshitems",
+      "-- Admin: refresh items.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command clearinventory": {
+    "prefix": "ESX command /clearinventory (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /clearinventory",
+      "-- Admin: clear inventory.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command clearloadout": {
+    "prefix": "ESX command /clearloadout (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /clearloadout",
+      "-- Admin: clear loadout.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command setgroup": {
+    "prefix": "ESX command /setgroup (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /setgroup",
+      "-- Admin: set permission group.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command save": {
+    "prefix": "ESX command /save (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /save",
+      "-- Admin: save player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command saveall": {
+    "prefix": "ESX command /saveall (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /saveall",
+      "-- Admin: save all players.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command coords": {
+    "prefix": "ESX command /coords (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /coords",
+      "-- Show coordinates.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command tpm": {
+    "prefix": "ESX command /tpm (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /tpm",
+      "-- Teleport to waypoint.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command goto": {
+    "prefix": "ESX command /goto (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /goto",
+      "-- Admin: teleport to player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command bring": {
+    "prefix": "ESX command /bring (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /bring",
+      "-- Admin: bring player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command kill": {
+    "prefix": "ESX command /kill (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /kill",
+      "-- Admin: kill player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command freeze": {
+    "prefix": "ESX command /freeze (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /freeze",
+      "-- Admin: freeze player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command unfreeze": {
+    "prefix": "ESX command /unfreeze (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /unfreeze",
+      "-- Admin: unfreeze player.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command noclip": {
+    "prefix": "ESX command /noclip (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /noclip",
+      "-- Admin: toggle noclip.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command players": {
+    "prefix": "ESX command /players (ESX)",
+    "body": ["-- Built-in es_extended command: /players", "-- List players."],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX command setbucket": {
+    "prefix": "ESX command /setbucket (ESX)",
+    "body": [
+      "-- Built-in es_extended command: /setbucket",
+      "-- Admin: set routing bucket.",
+    ],
+    "description": "Reference to a built-in ESX command (not a registration snippet).",
+    "scope": "lua",
+  },
+  "ESX Config EnablePaycheck": {
+    "prefix": "Config.EnablePaycheck",
+    "body": ["Config.EnablePaycheck = ${1:true}"],
+    "description": "Main config: enable or disable paychecks.",
+    "scope": "lua",
+  },
+  "ESX Config LogPaycheck": {
+    "prefix": "Config.LogPaycheck",
+    "body": ["Config.LogPaycheck = ${1:true}"],
+    "description": "Main config: enable paycheck logging.",
+    "scope": "lua",
+  },
+  "ESX Config EnableSocietyPayouts": {
+    "prefix": "Config.EnableSocietyPayouts",
+    "body": ["Config.EnableSocietyPayouts = ${1:true}"],
+    "description": "Main config: enable society payouts.",
+    "scope": "lua",
+  },
+  "ESX Config MaxWeight": {
+    "prefix": "Config.MaxWeight",
+    "body": ["Config.MaxWeight = ${1:24}"],
+    "description": "Main config: default maximum inventory weight.",
+    "scope": "lua",
+  },
+  "ESX Config PaycheckInterval": {
+    "prefix": "Config.PaycheckInterval",
+    "body": ["Config.PaycheckInterval = ${1:7} * 60000"],
+    "description": "Main config: paycheck interval in milliseconds (confirm unit in your config version).",
+    "scope": "lua",
+  },
+  "ESX Config EnableDebug": {
+    "prefix": "Config.EnableDebug",
+    "body": ["Config.EnableDebug = ${1:false}"],
+    "description": "Main config: toggle ESX debug mode.",
+    "scope": "lua",
+  },
+  "ESX Config Multichar": {
+    "prefix": "Config.Multichar",
+    "body": ["Config.Multichar = ${1:true}"],
+    "description": "Main config: multicharacter setting.",
+    "scope": "lua",
+  },
+  "ESX Config Identity": {
+    "prefix": "Config.Identity",
+    "body": ["Config.Identity = ${1:true}"],
+    "description": "Main config: identity setting.",
+    "scope": "lua",
+  },
+  "ESX Config DistanceGive": {
+    "prefix": "Config.DistanceGive",
+    "body": ["Config.DistanceGive = ${1:4.0}"],
+    "description": "Main config: maximum distance for giving items/money.",
+    "scope": "lua",
+  },
+  "ESX Config AdminLogging": {
+    "prefix": "Config.AdminLogging",
+    "body": ["Config.AdminLogging = ${1:true}"],
+    "description": "Main config: toggle admin action logging.",
+    "scope": "lua",
+  },
+  "ESX Config ValidCharacterSets": {
+    "prefix": "Config.ValidCharacterSets",
+    "body": [
+      "Config.ValidCharacterSets = ${1: { \"abcdefghijklmnopqrstuvwxyz\", \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\" }}",
+    ],
+    "description": "Main config: allowed character sets.",
+    "scope": "lua",
+  },
+  "ESX Config Identifier": {
+    "prefix": "Config.Identifier",
+    "body": ["Config.Identifier = \"${1:license}\""],
+    "description": "Main config: identifier configuration.",
+    "scope": "lua",
+  },
+  "ESX Adjustment CustomAIPlates": {
+    "prefix": "Config.CustomAIPlates",
+    "body": ["Config.CustomAIPlates = ${1:false}"],
+    "description": "Documented adjustment property: CustomAIPlates.",
+    "scope": "lua",
+  },
+  "ESX Adjustment DiscordActivity": {
+    "prefix": "Config.DiscordActivity",
+    "body": ["Config.DiscordActivity = ${1:false}"],
+    "description": "Documented adjustment property: DiscordActivity.",
+    "scope": "lua",
+  },
 }
